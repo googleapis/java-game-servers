@@ -1,11 +1,11 @@
 {
-  "updateTime": "2020-01-28T08:45:50.862196Z",
+  "updateTime": "2020-01-30T23:00:09.374080Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "0.44.3",
-        "dockerImage": "googleapis/artman@sha256:62b8b29acaae54b06a4183aa772e65b106e92d4bc466eb4db07953ab78bdb90c"
+        "version": "0.44.4",
+        "dockerImage": "googleapis/artman@sha256:19e945954fc960a4bdfee6cb34695898ab21a8cf0bac063ee39b91f00a1faec8"
       }
     },
     {
@@ -13,8 +13,7 @@
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "c9a86daf14b65d14552c5165ad4f3a3ff632428c",
-        "internalRef": "291759759",
-        "log": "c9a86daf14b65d14552c5165ad4f3a3ff632428c\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 291759759\n\n29c6b7076566b523080a67855a53ba966fda5f09\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 291749412\n\n27f130cf67d45dcbe741f7458e659938be51bea0\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 291296217\n\n6aa5e0772ee37d6cb3cb91f20f09157e0330695e\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 290760603\n\nd0ec2eecbad7e078d7c35be7ba368e080f856566\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 290091772\n\n8b6792365146974f71e0557067574b0b1b7479da\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 289715812\n\n6ac9d79e9dc5a1aef7ad565bce72c0f503532cc0\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 289201351\n\n323d4297d4a7e86c2c12532b80bfc43151706af3\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 288999300\n\ncc952bd80a8faddbecbeeea49a7397fc33a85e6c\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 288976485\n\n594cc157cbf9561f60a22f505e9993edcbb2687a\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 288555394\n\n7dc12c532abb1f261e8d2e75a8e3a68aee980c94\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 288482377\n\nc7bc200d62915541e1fd3c3ff6345f92269a3251\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 288042994\n\n56fd4653cfa12041eb1014c6f97c329ba1101800\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 287938309\n\n06c5c6e9caf01113977cf4105cb1b6844771f8f9\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 286483368\n\n50d6089d2563f351cfa6de5f3e66c4650835bd70\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 286374851\n\n68b7f1c6ebe6497f7b4782b4392a85bf1a05b6b8\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 286295076\n\na7835342f6e64e31565f4145923dedb757f63465\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 286264602\n\nc523d6cf1c73fef19faab8e8678e525c122e1a06\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 285014691\n\naff9bc8024bb6c95efca0ff3a05cc4296f5f8de1\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 284906344\n\nf2128b2740b806908eaf9b3aa70fd239c5c15b2d\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 284276591\n\n0243bd13dbd09e241f322c444f28a037d5aa2bd6\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 283826096\n\n192d5b6f9faef7503d58458b2c092d4ef209741f\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 283500292\n\n5d513d44d693ddcb1be8f9be53408db1dfd193bb\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 283500150\n\nce5522b84ca983ddafd1d518719bde507e86dd22\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 282852442\n\n524bfcd3608e00ac7d0fa73c0e4e653c5fcf9cc3\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 282851599\n\n9ff334257c960e970499872cb4162b1783d2736e\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 282627151\n\nfefd8243293bf3977a5eab0677b5cd7e91742617\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 282459955\n\n024b3da01ecae739af31af7aaff4cadd99f0e7a7\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 281857388\n\nf4fe0c5b279df9984717714e2c89b6aaeef97a81\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 281586383\n\nb815f56c4027e6155773a5f9a276ee85a6eaaaf0\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 281553400\n\n"
+        "internalRef": "291759759"
       }
     },
     {
@@ -52,9 +51,6 @@
     },
     {
       "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
@@ -222,12 +218,6 @@
       "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
       "path": "CODE_OF_CONDUCT.md"
     },
     {
@@ -237,22 +227,7 @@
       "path": "LICENSE"
     },
     {
-      "path": "README.md"
-    },
-    {
       "path": "codecov.yaml"
-    },
-    {
-      "path": "google-cloud-gameservices-bom/pom.xml"
-    },
-    {
-      "path": "google-cloud-gameservices/pom.xml"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPoliciesServiceClient.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPoliciesServiceSettings.java"
     },
     {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/GameServerClustersServiceClient.java"
@@ -273,19 +248,7 @@
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/RealmsServiceSettings.java"
     },
     {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPoliciesServiceClient.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPoliciesServiceSettings.java"
-    },
-    {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/package-info.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/AllocationPoliciesServiceStub.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/AllocationPoliciesServiceStubSettings.java"
     },
     {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GameServerClustersServiceStub.java"
@@ -298,12 +261,6 @@
     },
     {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GameServerDeploymentsServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcAllocationPoliciesServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcAllocationPoliciesServiceStub.java"
     },
     {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcGameServerClustersServiceCallableFactory.java"
@@ -324,37 +281,16 @@
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcRealmsServiceStub.java"
     },
     {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcScalingPoliciesServiceCallableFactory.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/GrpcScalingPoliciesServiceStub.java"
-    },
-    {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/RealmsServiceStub.java"
     },
     {
       "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/RealmsServiceStubSettings.java"
     },
     {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/ScalingPoliciesServiceStub.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/main/java/com/google/cloud/gaming/v1alpha/stub/ScalingPoliciesServiceStubSettings.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/AllocationPoliciesServiceClientTest.java"
-    },
-    {
       "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/GameServerClustersServiceClientTest.java"
     },
     {
       "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/GameServerDeploymentsServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockAllocationPoliciesService.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockAllocationPoliciesServiceImpl.java"
     },
     {
       "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockGameServerClustersService.java"
@@ -375,22 +311,7 @@
       "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockRealmsServiceImpl.java"
     },
     {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockScalingPoliciesService.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/MockScalingPoliciesServiceImpl.java"
-    },
-    {
       "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/RealmsServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-gameservices/src/test/java/com/google/cloud/gaming/v1alpha/ScalingPoliciesServiceClientTest.java"
-    },
-    {
-      "path": "grpc-google-cloud-gameservices-v1alpha/pom.xml"
-    },
-    {
-      "path": "grpc-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPoliciesServiceGrpc.java"
     },
     {
       "path": "grpc-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GameServerClustersServiceGrpc.java"
@@ -405,55 +326,13 @@
       "path": "grpc-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/RealmsServiceGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPoliciesServiceGrpc.java"
-    },
-    {
       "path": "java.header"
     },
     {
       "path": "license-checks.xml"
     },
     {
-      "path": "pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPolicies.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPolicyName.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/AllocationPolicyOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ClusterPercentageSelector.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ClusterPercentageSelectorOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CommitRolloutRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CommitRolloutRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/Common.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateAllocationPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateAllocationPolicyRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateGameServerClusterRequest.java"
@@ -480,18 +359,6 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateRealmRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateScalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/CreateScalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteAllocationPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteAllocationPolicyRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteGameServerClusterRequest.java"
     },
     {
@@ -516,22 +383,10 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteRealmRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteScalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeleteScalingPolicyRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeployedState.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeployedStateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeploymentTarget.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/DeploymentTargetOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/FetchDeploymentStateRequest.java"
@@ -544,12 +399,6 @@
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/FetchDeploymentStateResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/FleetAutoscalerSettings.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/FleetAutoscalerSettingsOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/FleetConfig.java"
@@ -624,24 +473,6 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GameServerDeploymentsServiceOuterClass.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GameServerTemplate.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GameServerTemplateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetAllocationPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetAllocationPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetDeploymentTargetRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetDeploymentTargetRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetGameServerClusterRequest.java"
     },
     {
@@ -672,12 +503,6 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetRealmRequestOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetScalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GetScalingPolicyRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/GkeClusterReference.java"
     },
     {
@@ -694,18 +519,6 @@
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/LabelSelectorOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListAllocationPoliciesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListAllocationPoliciesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListAllocationPoliciesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListAllocationPoliciesResponseOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListGameServerClustersRequest.java"
@@ -754,18 +567,6 @@
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListRealmsResponseOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListScalingPoliciesRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListScalingPoliciesRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListScalingPoliciesResponse.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ListScalingPoliciesResponseOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/LocationName.java"
@@ -864,28 +665,10 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/RealmsServiceOuterClass.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/RevertRolloutRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/RevertRolloutRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingConfig.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingConfigOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPolicies.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPolicy.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPolicyName.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScalingPolicyOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/Schedule.java"
@@ -894,22 +677,10 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/ScheduleOrBuilder.java"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/SetRolloutTargetRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/SetRolloutTargetRequestOrBuilder.java"
-    },
-    {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/SpecSource.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/SpecSourceOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/StartRolloutRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/StartRolloutRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/TargetDetails.java"
@@ -922,12 +693,6 @@
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/TargetStateOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateAllocationPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateAllocationPolicyRequestOrBuilder.java"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateGameServerClusterRequest.java"
@@ -952,15 +717,6 @@
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateRealmRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateScalingPolicyRequest.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/java/com/google/cloud/gaming/v1alpha/UpdateScalingPolicyRequestOrBuilder.java"
-    },
-    {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/proto/google/cloud/gaming/v1alpha/allocation_policies.proto"
     },
     {
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/proto/google/cloud/gaming/v1alpha/common.proto"
@@ -990,19 +746,7 @@
       "path": "proto-google-cloud-gameservices-v1alpha/src/main/proto/google/cloud/gaming/v1alpha/realms_service.proto"
     },
     {
-      "path": "proto-google-cloud-gameservices-v1alpha/src/main/proto/google/cloud/gaming/v1alpha/scaling_policies.proto"
-    },
-    {
       "path": "renovate.json"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "versions.txt"
     }
   ]
 }
