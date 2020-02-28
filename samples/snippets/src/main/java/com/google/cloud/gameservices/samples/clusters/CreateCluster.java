@@ -53,6 +53,8 @@ public class CreateCluster {
           .setName(clusterName)
           .setConnectionInfo(GameServerClusterConnectionInfo
               .newBuilder()
+              .setGkeClusterReference(GkeClusterReference.newBuilder()
+                  .setCluster(gkeName).build())
               .setNamespace("default"))
           .build();
 
