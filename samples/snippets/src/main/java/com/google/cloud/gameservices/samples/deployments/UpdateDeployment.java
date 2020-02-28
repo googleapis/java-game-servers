@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.GameServerDeployment;
 import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -37,24 +36,20 @@ public class UpdateDeployment {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
-      String deploymentName = String.format(
-          "projects/%s/locations/global/gameServerDeployments/%s",
-          projectId,
-          deploymentId);
+      String deploymentName =
+          String.format(
+              "projects/%s/locations/global/gameServerDeployments/%s", projectId, deploymentId);
 
-      GameServerDeployment deployment = GameServerDeployment
-          .newBuilder()
-          .setName(deploymentName)
-          .putLabels("key", "value")
-          .build();
+      GameServerDeployment deployment =
+          GameServerDeployment.newBuilder()
+              .setName(deploymentName)
+              .putLabels("key", "value")
+              .build();
 
-      FieldMask fieldMask = FieldMask
-          .newBuilder()
-          .addPaths("labels")
-          .build();
+      FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
 
-      OperationFuture<GameServerDeployment, Empty> call = client.updateGameServerDeploymentAsync(
-          deployment, fieldMask);
+      OperationFuture<GameServerDeployment, Empty> call =
+          client.updateGameServerDeploymentAsync(deployment, fieldMask);
 
       GameServerDeployment updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Deployment updated: " + updated.getName());

@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -41,11 +40,7 @@ public class UpdateRealm {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      Realm realm = Realm
-          .newBuilder()
-          .setName(realmName)
-          .setTimeZone("America/New_York")
-          .build();
+      Realm realm = Realm.newBuilder().setName(realmName).setTimeZone("America/New_York").build();
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("time_zone").build();
 

@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.CreateRealmRequest;
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -41,18 +40,15 @@ public class CreateRealm {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      Realm realm = Realm
-          .newBuilder()
-          .setName(realmName)
-          .setTimeZone("America/Los_Angeles")
-          .build();
+      Realm realm =
+          Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
 
-      CreateRealmRequest request = CreateRealmRequest
-          .newBuilder()
-          .setParent(parent)
-          .setRealmId(realmId)
-          .setRealm(realm)
-          .build();
+      CreateRealmRequest request =
+          CreateRealmRequest.newBuilder()
+              .setParent(parent)
+              .setRealmId(realmId)
+              .setRealm(realm)
+              .build();
 
       OperationFuture<Realm, Empty> call = client.createRealmAsync(request);
       Realm result = call.get(1, TimeUnit.MINUTES);

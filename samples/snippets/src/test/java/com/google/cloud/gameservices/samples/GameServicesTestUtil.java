@@ -26,7 +26,6 @@ import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient.ListGa
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient.ListRealmsPagedResponse;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -59,8 +58,7 @@ class GameServicesTestUtil {
 
       for (GameServerCluster cluster : response.iterateAll()) {
         System.out.println("Deleting game cluster " + cluster.getName());
-        OperationFuture poll =
-            clustersClient.deleteGameServerClusterAsync(cluster.getName());
+        OperationFuture poll = clustersClient.deleteGameServerClusterAsync(cluster.getName());
         poll.get(1, TimeUnit.MINUTES);
       }
     } catch (Exception e) {

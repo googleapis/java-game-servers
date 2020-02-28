@@ -23,10 +23,8 @@ import com.google.cloud.gameservices.samples.realms.DeleteRealm;
 import com.google.cloud.gameservices.samples.realms.GetRealm;
 import com.google.cloud.gameservices.samples.realms.ListRealms;
 import com.google.cloud.gameservices.samples.realms.UpdateRealm;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,8 +38,8 @@ public class RealmTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String REGION_ID = "us-central1";
 
-  private static String parentName = String.format(
-      "projects/%s/locations/%s", PROJECT_ID, REGION_ID);
+  private static String parentName =
+      String.format("projects/%s/locations/%s", PROJECT_ID, REGION_ID);
 
   private static String realmId = "realm-1";
   private static String realmName = String.format("%s/realms/%s", parentName, realmId);
@@ -75,8 +73,8 @@ public class RealmTests {
   @Test
   public void createDeleteRealmTest() {
     String newRealmId = "realm-2";
-    String newRealmName = String.format(
-        "projects/%s/locations/%s/realms/%s", PROJECT_ID, REGION_ID, newRealmId);
+    String newRealmName =
+        String.format("projects/%s/locations/%s/realms/%s", PROJECT_ID, REGION_ID, newRealmId);
     CreateRealm.createRealm(PROJECT_ID, REGION_ID, newRealmId);
     DeleteRealm.deleteRealm(PROJECT_ID, REGION_ID, newRealmId);
     String output = bout.toString();

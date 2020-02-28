@@ -20,7 +20,6 @@ package com.google.cloud.gameservices.samples.realms;
 
 import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
-
 import java.io.IOException;
 
 public class GetRealm {
@@ -32,8 +31,8 @@ public class GetRealm {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (RealmsServiceClient client = RealmsServiceClient.create()) {
-      String realmName = String.format(
-          "projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
+      String realmName =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
 
       Realm allocationPolicy = client.getRealm(realmName);
 

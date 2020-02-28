@@ -23,10 +23,8 @@ import com.google.cloud.gameservices.samples.deployments.DeleteDeployment;
 import com.google.cloud.gameservices.samples.deployments.GetDeployment;
 import com.google.cloud.gameservices.samples.deployments.ListDeployments;
 import com.google.cloud.gameservices.samples.deployments.UpdateDeployment;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,8 +39,8 @@ public class DeploymentTests {
 
   private static String parentName = String.format("projects/%s/locations/global", PROJECT_ID);
   private static String deploymentId = "deployment-1";
-  private static String deploymentName = String.format(
-      "%s/gameServerDeployments/%s", parentName, deploymentId);
+  private static String deploymentName =
+      String.format("%s/gameServerDeployments/%s", parentName, deploymentId);
 
   private final PrintStream originalOut = System.out;
   private ByteArrayOutputStream bout;
@@ -73,8 +71,8 @@ public class DeploymentTests {
   @Test
   public void createDeleteGameServerDeploymentTest() {
     String newDeploymentId = "deployment-2";
-    String newDeploymentName = String.format(
-        "%s/gameServerDeployments/%s", parentName, newDeploymentId);
+    String newDeploymentName =
+        String.format("%s/gameServerDeployments/%s", parentName, newDeploymentId);
     CreateDeployment.createGameServerDeployment(PROJECT_ID, newDeploymentId);
     DeleteDeployment.deleteGameServerDeployment(PROJECT_ID, newDeploymentId);
     assertTrue(bout.toString().contains("Game Server Deployment created: " + newDeploymentName));

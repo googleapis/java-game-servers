@@ -25,7 +25,6 @@ import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -67,20 +66,18 @@ public class CreateDeployment {
       String parent = String.format("projects/%s/locations/global", projectId);
       String deploymentName = String.format("%s/gameServerDeployments/%s", parent, deploymentId);
 
-      GameServerDeployment gameServerDeployment = GameServerDeployment
-          .newBuilder()
-          .setName(deploymentName)
-          .build();
+      GameServerDeployment gameServerDeployment =
+          GameServerDeployment.newBuilder().setName(deploymentName).build();
 
-      CreateGameServerDeploymentRequest request = CreateGameServerDeploymentRequest
-          .newBuilder()
-          .setParent(parent)
-          .setDeploymentId(deploymentId)
-          .setGameServerDeployment(gameServerDeployment)
-          .build();
+      CreateGameServerDeploymentRequest request =
+          CreateGameServerDeploymentRequest.newBuilder()
+              .setParent(parent)
+              .setDeploymentId(deploymentId)
+              .setGameServerDeployment(gameServerDeployment)
+              .build();
 
-      OperationFuture<GameServerDeployment, Empty> call = client.createGameServerDeploymentAsync(
-          request);
+      OperationFuture<GameServerDeployment, Empty> call =
+          client.createGameServerDeploymentAsync(request);
 
       GameServerDeployment created = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Deployment created: " + created.getName());

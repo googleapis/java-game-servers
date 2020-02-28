@@ -24,10 +24,8 @@ import com.google.cloud.gameservices.samples.clusters.GetCluster;
 import com.google.cloud.gameservices.samples.clusters.ListClusters;
 import com.google.cloud.gameservices.samples.clusters.UpdateCluster;
 import com.google.cloud.gameservices.samples.realms.CreateRealm;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,15 +39,15 @@ public class ClusterTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String REGION_ID = "us-central1";
 
-  private static String parentName = String.format(
-      "projects/%s/locations/%s", PROJECT_ID, REGION_ID);
+  private static String parentName =
+      String.format("projects/%s/locations/%s", PROJECT_ID, REGION_ID);
 
   private static String realmId = "realm-1";
   private static String realmName = String.format("%s/realms/%s", parentName, realmId);
 
   private static String clusterId = "cluster-1";
-  private static String clusterName = String.format(
-      "%s/gameServerClusters/%s", realmName, clusterId);
+  private static String clusterName =
+      String.format("%s/gameServerClusters/%s", realmName, clusterId);
 
   private static String gkeClusterName = System.getenv("GKE_CLUSTER");
 
@@ -87,8 +85,7 @@ public class ClusterTests {
   @Test
   public void createDeleteClusterTest() {
     String newClusterId = "cluster-2";
-    String newClusterName = String.format(
-        "%s/gameServerClusters/%s", realmName, newClusterId);
+    String newClusterName = String.format("%s/gameServerClusters/%s", realmName, newClusterId);
     CreateCluster.createGameServerCluster(
         PROJECT_ID, REGION_ID, realmId, newClusterId, gkeClusterName);
     DeleteCluster.deleteGameServerCluster(PROJECT_ID, REGION_ID, realmId, newClusterId);

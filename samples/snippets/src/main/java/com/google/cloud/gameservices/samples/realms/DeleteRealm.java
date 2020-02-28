@@ -21,7 +21,6 @@ package com.google.cloud.gameservices.samples.realms;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

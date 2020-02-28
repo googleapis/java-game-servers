@@ -21,7 +21,6 @@ package com.google.cloud.gameservices.samples.deployments;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;

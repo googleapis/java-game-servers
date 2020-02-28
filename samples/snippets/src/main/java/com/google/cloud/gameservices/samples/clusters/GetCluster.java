@@ -20,7 +20,6 @@ package com.google.cloud.gameservices.samples.clusters;
 
 import com.google.cloud.gaming.v1alpha.GameServerCluster;
 import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
-
 import java.io.IOException;
 
 public class GetCluster {
@@ -35,8 +34,8 @@ public class GetCluster {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent = String.format(
-          "projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
+      String parent =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
       String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
       GameServerCluster cluster = client.getGameServerCluster(clusterName);

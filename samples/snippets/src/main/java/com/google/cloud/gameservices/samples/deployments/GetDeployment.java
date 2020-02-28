@@ -20,7 +20,6 @@ package com.google.cloud.gameservices.samples.deployments;
 
 import com.google.cloud.gaming.v1alpha.GameServerDeployment;
 import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
-
 import java.io.IOException;
 
 public class GetDeployment {
@@ -31,10 +30,9 @@ public class GetDeployment {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
-      String deploymentName = String.format(
-          "projects/%s/locations/global/gameServerDeployments/%s",
-          projectId,
-          deploymentId);
+      String deploymentName =
+          String.format(
+              "projects/%s/locations/global/gameServerDeployments/%s", projectId, deploymentId);
 
       GameServerDeployment deployment = client.getGameServerDeployment(deploymentName);
 

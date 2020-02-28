@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.Realm;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
 import com.google.cloud.gaming.v1alpha.RealmsServiceClient.ListRealmsPagedResponse;
 import com.google.common.base.Strings;
-
 import java.io.IOException;
 
 public class ListRealms {
@@ -42,11 +41,11 @@ public class ListRealms {
       }
 
       while (!Strings.isNullOrEmpty(response.getNextPageToken())) {
-        ListRealmsRequest request = ListRealmsRequest
-            .newBuilder()
-            .setParent(parent)
-            .setPageToken(response.getNextPageToken())
-            .build();
+        ListRealmsRequest request =
+            ListRealmsRequest.newBuilder()
+                .setParent(parent)
+                .setPageToken(response.getNextPageToken())
+                .build();
         response = client.listRealms(request);
         for (Realm realm : response.iterateAll()) {
           System.out.println("Realm found: " + realm.getName());

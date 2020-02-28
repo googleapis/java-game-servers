@@ -25,7 +25,6 @@ import com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo;
 import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
 import com.google.cloud.gaming.v1alpha.GkeClusterReference;
 import com.google.protobuf.Empty;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -44,26 +43,26 @@ public class CreateCluster {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent = String.format(
-          "projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
+      String parent =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
       String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
-      GameServerCluster gameServerCluster = GameServerCluster
-          .newBuilder()
-          .setName(clusterName)
-          .setConnectionInfo(GameServerClusterConnectionInfo
-              .newBuilder()
-              .setGkeClusterReference(GkeClusterReference.newBuilder()
-                  .setCluster(gkeName).build())
-              .setNamespace("default"))
-          .build();
+      GameServerCluster gameServerCluster =
+          GameServerCluster.newBuilder()
+              .setName(clusterName)
+              .setConnectionInfo(
+                  GameServerClusterConnectionInfo.newBuilder()
+                      .setGkeClusterReference(
+                          GkeClusterReference.newBuilder().setCluster(gkeName).build())
+                      .setNamespace("default"))
+              .build();
 
-      CreateGameServerClusterRequest request = CreateGameServerClusterRequest
-          .newBuilder()
-          .setParent(parent)
-          .setGameServerClusterId(clusterId)
-          .setGameServerCluster(gameServerCluster)
-          .build();
+      CreateGameServerClusterRequest request =
+          CreateGameServerClusterRequest.newBuilder()
+              .setParent(parent)
+              .setGameServerClusterId(clusterId)
+              .setGameServerCluster(gameServerCluster)
+              .build();
 
       OperationFuture<GameServerCluster, Empty> call = client.createGameServerClusterAsync(request);
 

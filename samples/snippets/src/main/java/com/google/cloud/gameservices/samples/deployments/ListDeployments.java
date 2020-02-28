@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
 import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
 import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsRequest;
 import com.google.common.base.Strings;
-
 import java.io.IOException;
 
 public class ListDeployments {
@@ -41,11 +40,11 @@ public class ListDeployments {
       }
 
       while (!Strings.isNullOrEmpty(response.getNextPageToken())) {
-        ListGameServerDeploymentsRequest request = ListGameServerDeploymentsRequest
-            .newBuilder()
-            .setParent(parent)
-            .setPageToken(response.getNextPageToken())
-            .build();
+        ListGameServerDeploymentsRequest request =
+            ListGameServerDeploymentsRequest.newBuilder()
+                .setParent(parent)
+                .setPageToken(response.getNextPageToken())
+                .build();
         response = client.listGameServerDeployments(request);
         for (GameServerDeployment deployment : response.iterateAll()) {
           System.out.println("Game Server Deployment found: " + deployment.getName());

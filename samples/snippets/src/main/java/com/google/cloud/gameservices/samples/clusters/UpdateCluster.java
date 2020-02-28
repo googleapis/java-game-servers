@@ -23,7 +23,6 @@ import com.google.cloud.gaming.v1alpha.GameServerCluster;
 import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -40,20 +39,16 @@ public class UpdateCluster {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent = String.format(
-          "projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-      String clusterName = String.format(
-          "%s/gameServerClusters/%s", parent, clusterId);
+      String parent =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
+      String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
-      GameServerCluster cluster = GameServerCluster
-          .newBuilder()
-          .setName(clusterName)
-          .putLabels("key", "value")
-          .build();
+      GameServerCluster cluster =
+          GameServerCluster.newBuilder().setName(clusterName).putLabels("key", "value").build();
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
-      OperationFuture<GameServerCluster, Empty> call = client.updateGameServerClusterAsync(
-          cluster, fieldMask);
+      OperationFuture<GameServerCluster, Empty> call =
+          client.updateGameServerClusterAsync(cluster, fieldMask);
 
       GameServerCluster updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster updated: " + updated.getName());
