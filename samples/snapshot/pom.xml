@@ -30,6 +30,19 @@
       <artifactId>google-cloud-gameservices</artifactId>
       <version>0.19.1-SNAPSHOT</version>
     </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <version>1.0.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <!-- {x-version-update-end} -->
 
