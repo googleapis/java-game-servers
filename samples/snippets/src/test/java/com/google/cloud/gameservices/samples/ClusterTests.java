@@ -49,7 +49,16 @@ public class ClusterTests {
   private static String clusterName =
       String.format("%s/gameServerClusters/%s", realmName, clusterId);
 
-  private static String gkeClusterName = System.getenv("GKE_CLUSTER");
+  private static final String DEFAULT_GKE_CLUSTER =
+      String.format("projects/%s/locations/us-central1-a/clusters/standard-cluster-1", PROJECT_ID);
+  private static String gkeClusterName;
+
+  static {
+    gkeClusterName = System.getenv("GKE_CLUSTER");
+    if (gkeClusterName == null) {
+      gkeClusterName = DEFAULT_GKE_CLUSTER;
+    }
+  }
 
   private final PrintStream originalOut = System.out;
   private ByteArrayOutputStream bout;
