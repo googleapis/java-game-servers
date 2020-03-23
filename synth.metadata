@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-03-19T09:17:30.497861Z",
+  "updateTime": "2020-03-23T21:56:24.809218Z",
   "sources": [
     {
       "generator": {
@@ -13,22 +13,22 @@
         "name": "googleapis-private",
         "remote": "https://github.com/googleapis/googleapis-private.git",
         "sha": "e6378caa596533251006a9eb318f3f9e71984f2b",
-        "internalRef": "301441701",
-        "log": "e6378caa596533251006a9eb318f3f9e71984f2b\nSynchronize new proto/yaml changes.\n\nPiperOrigin-RevId: 301441701\n\n"
+        "internalRef": "301441701"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "bcad3e01b69851ad682a87f8202003a1683ad73a"
+        "sha": "7e98e1609c91082f4eeb63b530c6468aefd18cfd"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "bcad3e01b69851ad682a87f8202003a1683ad73a"
+        "sha": "7e98e1609c91082f4eeb63b530c6468aefd18cfd",
+        "log": "7e98e1609c91082f4eeb63b530c6468aefd18cfd\nbuild: use checkout@v2, not v1, as this allows manual re-running of tests (#451)\n\nhttps://github.com/actions/checkout/issues/23\n"
       }
     }
   ],
