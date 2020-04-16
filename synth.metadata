@@ -1,18 +1,17 @@
 {
-  "updateTime": "2020-04-09T09:59:07.630817Z",
   "sources": [
     {
       "generator": {
         "name": "artman",
-        "version": "1.2.0",
-        "dockerImage": "googleapis/artman@sha256:ef1a5b367dbe1e37cea1c7c814c801a638473e8dd66f87f4a2b8c2a146013673"
+        "version": "2.0.0",
+        "dockerImage": "googleapis/artman@sha256:b3b47805231a305d0f40c4bf069df20f6a2635574e6d4259fac651d3f9f6e098"
       }
     },
     {
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-gameservices.git",
-        "sha": "9bc831dd2a61d6942dff48c627a73a725b8000bc"
+        "sha": "e91362e66b01c1d44c98707d22a96eac925676a8"
       }
     },
     {
