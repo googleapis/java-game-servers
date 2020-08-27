@@ -18,21 +18,16 @@ import synthtool as s
 import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
-gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
+AUTOSYNTH_MULTIPLE_COMMITS = True
 
-versions = ['v1alpha']
-service = 'gameservices'
-config_pattern = "/google/cloud/gaming/artman_gameservices_{version}.yaml"
+service = 'gaming'
+versions = ['v1beta', 'v1']
 
 for version in versions:
-  java.gapic_library(
-    service=service,
-    version=version,
-    config_pattern=config_pattern,
-    package_pattern="com.google.cloud.gaming.{version}",
-    gapic=gapic,
-    private=True,
-  )
+    library = java.bazel_library(
+        service=service,
+        version=version,
+        destination_name="game-servers",
+    )
 
 java.common_templates()

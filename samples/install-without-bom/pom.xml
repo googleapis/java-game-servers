@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud.samples</groupId>
     <artifactId>shared-configuration</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.18</version>
   </parent>
 
   <properties>
@@ -23,15 +23,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <!-- {x-version-update-start:google-cloud-gameservices:released} -->
+  <!-- {x-version-update-start:google-cloud-game-servers:released} -->
   <dependencies>
-    <!-- [START gameservices_install_without_bom] -->
+    <!-- [START game_servers_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-gameservices</artifactId>
-      <version>0.19.0</version>
+      <artifactId>google-cloud-game-servers</artifactId>
+      <version>0.21.0</version>
     </dependency>
-    <!-- [END gameservices_install_without_bom] -->
+    <!-- [END game_servers_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
@@ -54,6 +54,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>add-snippets-source</id>

@@ -13,46 +13,26 @@ Java idiomatic client for [Cloud Gaming][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>libraries-bom</artifactId>
-      <version>4.1.1</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-<dependencies>
-  <dependency>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-gameservices</artifactId>
-  </dependency>
-</dependencies>
-```
 
-[//]: # ({x-version-update-start:google-cloud-gameservices:released})
-
-If you are using Maven without BOM, add this to your dependencies:
+If you are using Maven, add this to your pom.xml file:
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-gameservices</artifactId>
-  <version>0.19.0</version>
+  <artifactId>google-cloud-game-servers</artifactId>
+  <version>0.21.0</version>
 </dependency>
 ```
 
+[//]: # ({x-version-update-start:google-cloud-game-servers:released})
+
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-gameservices:0.19.0'
+compile 'com.google.cloud:google-cloud-game-servers:0.21.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gameservices" % "0.19.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-game-servers" % "0.21.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -72,8 +52,8 @@ You will need a [Google Cloud Platform Console][developer-console] project with 
 
 ### Installation and setup
 
-You'll need to obtain the `google-cloud-gameservices` library.  See the [Quickstart](#quickstart) section
-to add `google-cloud-gameservices` as a dependency in your code.
+You'll need to obtain the `google-cloud-game-servers` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-game-servers` as a dependency in your code.
 
 ## About Cloud Gaming
 
@@ -102,12 +82,12 @@ Java 7 or above is required for using this client.
 
 ## Versioning
 
+
 This library follows [Semantic Versioning](http://semver.org/).
 
 
 It is currently in major version zero (``0.y.z``), which means that anything may change at any time
 and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -135,28 +115,28 @@ Java 8 Windows | [![Kokoro CI][kokoro-badge-image-4]][kokoro-badge-link-4]
 Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 [product-docs]: https://cloud.google.com/docs/games/products/
-[javadocs]: https://googleapis.dev/java/google-cloud-gameservices/latest/
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-gameservices/java11.html
-[stability-image]: https://img.shields.io/badge/stability-alpha-orange
-[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gameservices.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-gameservices&core=gav
+[javadocs]: https://googleapis.dev/java/google-cloud-game-servers/latest/
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-game-servers/java11.html
+[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-game-servers.svg
+[maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-game-servers&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/master/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-gameservices/blob/master/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-gameservices/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-gameservices/blob/master/LICENSE
+[contributing]: https://github.com/googleapis/java-game-servers/blob/master/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-game-servers/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-game-servers/blob/master/LICENSE
 
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=gameservices.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
