@@ -19,11 +19,12 @@ package com.google.cloud.gameservices.samples.clusters;
 // [START cloud_game_servers_cluster_create]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.CreateGameServerClusterRequest;
-import com.google.cloud.gaming.v1alpha.GameServerCluster;
-import com.google.cloud.gaming.v1alpha.GameServerClusterConnectionInfo;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
-import com.google.cloud.gaming.v1alpha.GkeClusterReference;
+import com.google.cloud.gaming.v1.CreateGameServerClusterRequest;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClusterConnectionInfo;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GkeClusterReference;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -64,7 +65,8 @@ public class CreateCluster {
               .setGameServerCluster(gameServerCluster)
               .build();
 
-      OperationFuture<GameServerCluster, Empty> call = client.createGameServerClusterAsync(request);
+      OperationFuture<GameServerCluster, OperationMetadata> call =
+          client.createGameServerClusterAsync(request);
 
       GameServerCluster created = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster created: " + created.getName());

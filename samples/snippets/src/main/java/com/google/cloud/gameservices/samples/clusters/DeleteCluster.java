@@ -19,7 +19,8 @@ package com.google.cloud.gameservices.samples.clusters;
 // [START cloud_game_servers_cluster_delete]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -41,7 +42,8 @@ public class DeleteCluster {
           String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
       String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
-      OperationFuture<Empty, Empty> call = client.deleteGameServerClusterAsync(clusterName);
+      OperationFuture<Empty, OperationMetadata> call =
+          client.deleteGameServerClusterAsync(clusterName);
 
       call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster deleted: " + clusterName);

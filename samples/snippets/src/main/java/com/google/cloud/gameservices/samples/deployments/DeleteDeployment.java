@@ -19,7 +19,8 @@ package com.google.cloud.gameservices.samples.deployments;
 // [START cloud_game_servers_deployment_delete]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -37,7 +38,8 @@ public class DeleteDeployment {
       String parent = String.format("projects/%s/locations/global", projectId);
       String deploymentName = String.format("%s/gameServerDeployments/%s", parent, deploymentId);
 
-      OperationFuture<Empty, Empty> call = client.deleteGameServerDeploymentAsync(deploymentName);
+      OperationFuture<Empty, OperationMetadata> call =
+          client.deleteGameServerDeploymentAsync(deploymentName);
       call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Deployment deleted: " + deploymentName);
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {

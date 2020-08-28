@@ -18,10 +18,10 @@ package com.google.cloud.gameservices.samples.realms;
 
 // [START cloud_game_servers_realm_list]
 
-import com.google.cloud.gaming.v1alpha.ListRealmsRequest;
-import com.google.cloud.gaming.v1alpha.Realm;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient.ListRealmsPagedResponse;
+import com.google.cloud.gaming.v1.ListRealmsRequest;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
+import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
 import com.google.common.base.Strings;
 import java.io.IOException;
 

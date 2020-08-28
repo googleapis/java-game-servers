@@ -19,9 +19,9 @@ package com.google.cloud.gameservices.samples.realms;
 // [START cloud_game_servers_realm_update]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.Realm;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
-import com.google.protobuf.Empty;
+import com.google.cloud.gaming.v1.OperationMetadata;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -44,7 +44,7 @@ public class UpdateRealm {
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("time_zone").build();
 
-      OperationFuture<Realm, Empty> call = client.updateRealmAsync(realm, fieldMask);
+      OperationFuture<Realm, OperationMetadata> call = client.updateRealmAsync(realm, fieldMask);
 
       Realm updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Realm updated: " + updated.getName());

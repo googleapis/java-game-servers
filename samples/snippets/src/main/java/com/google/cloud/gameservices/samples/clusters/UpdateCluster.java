@@ -19,9 +19,9 @@ package com.google.cloud.gameservices.samples.clusters;
 // [START cloud_game_servers_cluster_update]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.GameServerCluster;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
-import com.google.protobuf.Empty;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -47,7 +47,7 @@ public class UpdateCluster {
           GameServerCluster.newBuilder().setName(clusterName).putLabels("key", "value").build();
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
-      OperationFuture<GameServerCluster, Empty> call =
+      OperationFuture<GameServerCluster, OperationMetadata> call =
           client.updateGameServerClusterAsync(cluster, fieldMask);
 
       GameServerCluster updated = call.get(1, TimeUnit.MINUTES);

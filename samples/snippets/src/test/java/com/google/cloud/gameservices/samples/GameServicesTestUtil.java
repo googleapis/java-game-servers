@@ -17,15 +17,15 @@
 package com.google.cloud.gameservices.samples;
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.GameServerCluster;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
-import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
-import com.google.cloud.gaming.v1alpha.Realm;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient.ListRealmsPagedResponse;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
+import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 

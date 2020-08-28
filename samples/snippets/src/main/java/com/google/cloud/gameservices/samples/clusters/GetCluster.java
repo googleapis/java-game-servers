@@ -18,8 +18,8 @@ package com.google.cloud.gameservices.samples.clusters;
 
 // [START cloud_game_servers_cluster_get]
 
-import com.google.cloud.gaming.v1alpha.GameServerCluster;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
 import java.io.IOException;
 
 public class GetCluster {

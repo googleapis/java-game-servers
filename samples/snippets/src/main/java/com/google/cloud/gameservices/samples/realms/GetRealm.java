@@ -18,8 +18,8 @@ package com.google.cloud.gameservices.samples.realms;
 
 // [START cloud_game_servers_realm_get]
 
-import com.google.cloud.gaming.v1alpha.Realm;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import java.io.IOException;
 
 public class GetRealm {

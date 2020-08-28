@@ -19,7 +19,8 @@ package com.google.cloud.gameservices.samples.realms;
 // [START cloud_game_servers_realm_delete]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.RealmsServiceClient;
+import com.google.cloud.gaming.v1.OperationMetadata;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -38,7 +39,7 @@ public class DeleteRealm {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      OperationFuture<Empty, Empty> call = client.deleteRealmAsync(realmName);
+      OperationFuture<Empty, OperationMetadata> call = client.deleteRealmAsync(realmName);
 
       call.get(1, TimeUnit.MINUTES);
       System.out.println("Realm deleted: " + realmName);

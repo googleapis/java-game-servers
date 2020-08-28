@@ -18,10 +18,10 @@ package com.google.cloud.gameservices.samples.clusters;
 
 // [START cloud_game_servers_cluster_list]
 
-import com.google.cloud.gaming.v1alpha.GameServerCluster;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient;
-import com.google.cloud.gaming.v1alpha.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
-import com.google.cloud.gaming.v1alpha.ListGameServerClustersRequest;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
+import com.google.cloud.gaming.v1.ListGameServerClustersRequest;
 import com.google.common.base.Strings;
 import java.io.IOException;
 

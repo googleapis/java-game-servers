@@ -19,9 +19,9 @@ package com.google.cloud.gameservices.samples.deployments;
 // [START cloud_game_servers_deployment_update]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
-import com.google.protobuf.Empty;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -48,7 +48,7 @@ public class UpdateDeployment {
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
 
-      OperationFuture<GameServerDeployment, Empty> call =
+      OperationFuture<GameServerDeployment, OperationMetadata> call =
           client.updateGameServerDeploymentAsync(deployment, fieldMask);
 
       GameServerDeployment updated = call.get(1, TimeUnit.MINUTES);

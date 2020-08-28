@@ -18,10 +18,10 @@ package com.google.cloud.gameservices.samples.deployments;
 
 // [START cloud_game_servers_deployment_list]
 
-import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
-import com.google.cloud.gaming.v1alpha.ListGameServerDeploymentsRequest;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
+import com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest;
 import com.google.common.base.Strings;
 import java.io.IOException;
 

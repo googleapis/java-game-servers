@@ -18,8 +18,8 @@ package com.google.cloud.gameservices.samples.deployments;
 
 // [START cloud_game_servers_deployment_get]
 
-import com.google.cloud.gaming.v1alpha.GameServerDeployment;
-import com.google.cloud.gaming.v1alpha.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
 import java.io.IOException;
 
 public class GetDeployment {
