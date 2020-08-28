@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.realms;
+package com.example.gameservices.samples.realms;
 
 // [START cloud_game_servers_realm_list]
 

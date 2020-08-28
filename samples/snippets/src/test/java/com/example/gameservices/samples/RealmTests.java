@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples;
+package com.example.gameservices.samples;
 
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.gameservices.samples.realms.CreateRealm;
-import com.google.cloud.gameservices.samples.realms.DeleteRealm;
-import com.google.cloud.gameservices.samples.realms.GetRealm;
-import com.google.cloud.gameservices.samples.realms.ListRealms;
-import com.google.cloud.gameservices.samples.realms.UpdateRealm;
+import com.example.gameservices.samples.realms.CreateRealm;
+import com.example.gameservices.samples.realms.DeleteRealm;
+import com.example.gameservices.samples.realms.GetRealm;
+import com.example.gameservices.samples.realms.UpdateRealm;
+import com.example.gameservices.samples.realms.ListRealms;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

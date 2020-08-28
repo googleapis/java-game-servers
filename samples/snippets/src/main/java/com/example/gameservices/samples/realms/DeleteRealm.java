@@ -14,38 +14,39 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.deployments;
+package com.example.gameservices.samples.realms;
 
-// [START cloud_game_servers_deployment_delete]
+// [START cloud_game_servers_realm_delete]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
 import com.google.cloud.gaming.v1.OperationMetadata;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class DeleteDeployment {
-  public static void deleteGameServerDeployment(String projectId, String deploymentId) {
+public class DeleteRealm {
+  public static void deleteRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
-    // String deploymentId = "your-game-server-deployment-id";
+    // String regionId = "us-central1-f";
+    // String realmId = "your-realm-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
-      String parent = String.format("projects/%s/locations/global", projectId);
-      String deploymentName = String.format("%s/gameServerDeployments/%s", parent, deploymentId);
+    try (RealmsServiceClient client = RealmsServiceClient.create()) {
+      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
+      String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      OperationFuture<Empty, OperationMetadata> call =
-          client.deleteGameServerDeploymentAsync(deploymentName);
+      OperationFuture<Empty, OperationMetadata> call = client.deleteRealmAsync(realmName);
+
       call.get(1, TimeUnit.MINUTES);
-      System.out.println("Game Server Deployment deleted: " + deploymentName);
+      System.out.println("Realm deleted: " + realmName);
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Deployment delete request unsuccessful.");
+      System.err.println("Realm delete request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_deployment_delete]
+// [END cloud_game_servers_realm_delete]

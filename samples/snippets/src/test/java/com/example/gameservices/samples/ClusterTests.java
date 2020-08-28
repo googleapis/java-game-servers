@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples;
+package com.example.gameservices.samples;
 
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.gameservices.samples.clusters.CreateCluster;
-import com.google.cloud.gameservices.samples.clusters.DeleteCluster;
-import com.google.cloud.gameservices.samples.clusters.GetCluster;
-import com.google.cloud.gameservices.samples.clusters.ListClusters;
-import com.google.cloud.gameservices.samples.clusters.UpdateCluster;
-import com.google.cloud.gameservices.samples.realms.CreateRealm;
+import com.example.gameservices.samples.clusters.CreateCluster;
+import com.example.gameservices.samples.clusters.DeleteCluster;
+import com.example.gameservices.samples.clusters.GetCluster;
+import com.example.gameservices.samples.clusters.ListClusters;
+import com.example.gameservices.samples.clusters.UpdateCluster;
+import com.example.gameservices.samples.realms.CreateRealm;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

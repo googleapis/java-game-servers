@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.realms;
+package com.example.gameservices.samples.realms;
 
-// [START cloud_game_servers_realm_delete]
+// [START cloud_game_servers_realm_create]
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.gaming.v1.CreateRealmRequest;
 import com.google.cloud.gaming.v1.OperationMetadata;
+import com.google.cloud.gaming.v1.Realm;
 import com.google.cloud.gaming.v1.RealmsServiceClient;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class DeleteRealm {
-  public static void deleteRealm(String projectId, String regionId, String realmId) {
+public class CreateRealm {
+  public static void createRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -39,14 +40,24 @@ public class DeleteRealm {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      OperationFuture<Empty, OperationMetadata> call = client.deleteRealmAsync(realmName);
+      Realm realm =
+          Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
 
-      call.get(1, TimeUnit.MINUTES);
-      System.out.println("Realm deleted: " + realmName);
+      CreateRealmRequest request =
+          CreateRealmRequest.newBuilder()
+              .setParent(parent)
+              .setRealmId(realmId)
+              .setRealm(realm)
+              .build();
+
+      OperationFuture<Realm, OperationMetadata> call = client.createRealmAsync(request);
+      Realm result = call.get(1, TimeUnit.MINUTES);
+
+      System.out.println("Realm created: " + result.getName());
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Realm delete request unsuccessful.");
+      System.err.println("Realm create request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_realm_delete]
+// [END cloud_game_servers_realm_create]

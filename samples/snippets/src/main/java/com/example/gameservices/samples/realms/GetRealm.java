@@ -14,36 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.clusters;
+package com.example.gameservices.samples.realms;
 
-// [START cloud_game_servers_cluster_get]
+// [START cloud_game_servers_realm_get]
 
-import com.google.cloud.gaming.v1.GameServerCluster;
-import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import java.io.IOException;
 
-public class GetCluster {
-
-  public static void getGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+public class GetRealm {
+  public static void getRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
-    // String clusterId = "your-game-server-cluster-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent =
+    try (RealmsServiceClient client = RealmsServiceClient.create()) {
+      String realmName =
           String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-      String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
-      GameServerCluster cluster = client.getGameServerCluster(clusterName);
+      Realm allocationPolicy = client.getRealm(realmName);
 
-      System.out.println("Game Server Cluster found: " + cluster.getName());
+      System.out.println("Realm found: " + allocationPolicy.getName());
     } catch (IOException e) {
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_cluster_get]
+// [END cloud_game_servers_realm_get]

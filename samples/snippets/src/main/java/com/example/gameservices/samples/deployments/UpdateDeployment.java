@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.clusters;
+package com.example.gameservices.samples.deployments;
 
-// [START cloud_game_servers_cluster_update]
+// [START cloud_game_servers_deployment_update]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1.GameServerCluster;
-import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
 import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -28,34 +28,35 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class UpdateCluster {
-  public static void updateGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+public class UpdateDeployment {
+  public static void updateGameServerDeployment(String projectId, String deploymentId) {
     // String projectId = "your-project-id";
-    // String regionId = "us-central1-f";
-    // String realmId = "your-realm-id";
-    // String clusterId = "your-game-server-cluster-id";
+    // String deploymentId = "your-game-server-deployment-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent =
-          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-      String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
+    try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
+      String deploymentName =
+          String.format(
+              "projects/%s/locations/global/gameServerDeployments/%s", projectId, deploymentId);
 
-      GameServerCluster cluster =
-          GameServerCluster.newBuilder().setName(clusterName).putLabels("key", "value").build();
+      GameServerDeployment deployment =
+          GameServerDeployment.newBuilder()
+              .setName(deploymentName)
+              .putLabels("key", "value")
+              .build();
 
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
-      OperationFuture<GameServerCluster, OperationMetadata> call =
-          client.updateGameServerClusterAsync(cluster, fieldMask);
 
-      GameServerCluster updated = call.get(1, TimeUnit.MINUTES);
-      System.out.println("Game Server Cluster updated: " + updated.getName());
+      OperationFuture<GameServerDeployment, OperationMetadata> call =
+          client.updateGameServerDeploymentAsync(deployment, fieldMask);
+
+      GameServerDeployment updated = call.get(1, TimeUnit.MINUTES);
+      System.out.println("Game Server Deployment updated: " + updated.getName());
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster update request unsuccessful.");
+      System.err.println("Game Server Deployment update request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_cluster_update]
+// [END cloud_game_servers_deployment_update]

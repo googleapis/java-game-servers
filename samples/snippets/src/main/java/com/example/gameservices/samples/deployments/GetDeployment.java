@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples.deployments;
+package com.example.gameservices.samples.deployments;
 
 // [START cloud_game_servers_deployment_get]
 

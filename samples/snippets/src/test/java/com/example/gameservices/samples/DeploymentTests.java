@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.cloud.gameservices.samples;
+package com.example.gameservices.samples;
 
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.gameservices.samples.deployments.CreateDeployment;
-import com.google.cloud.gameservices.samples.deployments.DeleteDeployment;
-import com.google.cloud.gameservices.samples.deployments.GetDeployment;
-import com.google.cloud.gameservices.samples.deployments.ListDeployments;
-import com.google.cloud.gameservices.samples.deployments.UpdateDeployment;
+import com.example.gameservices.samples.deployments.CreateDeployment;
+import com.example.gameservices.samples.deployments.DeleteDeployment;
+import com.example.gameservices.samples.deployments.GetDeployment;
+import com.example.gameservices.samples.deployments.ListDeployments;
+import com.example.gameservices.samples.deployments.UpdateDeployment;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
