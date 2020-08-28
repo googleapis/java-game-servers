@@ -23,7 +23,6 @@ import com.example.gameservices.samples.deployments.DeleteDeployment;
 import com.example.gameservices.samples.deployments.GetDeployment;
 import com.example.gameservices.samples.deployments.ListDeployments;
 import com.example.gameservices.samples.deployments.UpdateDeployment;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

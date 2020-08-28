@@ -21,9 +21,8 @@ import static org.junit.Assert.assertTrue;
 import com.example.gameservices.samples.realms.CreateRealm;
 import com.example.gameservices.samples.realms.DeleteRealm;
 import com.example.gameservices.samples.realms.GetRealm;
-import com.example.gameservices.samples.realms.UpdateRealm;
 import com.example.gameservices.samples.realms.ListRealms;
-
+import com.example.gameservices.samples.realms.UpdateRealm;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

@@ -24,7 +24,6 @@ import com.example.gameservices.samples.clusters.GetCluster;
 import com.example.gameservices.samples.clusters.ListClusters;
 import com.example.gameservices.samples.clusters.UpdateCluster;
 import com.example.gameservices.samples.realms.CreateRealm;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
