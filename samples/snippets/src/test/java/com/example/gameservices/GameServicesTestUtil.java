@@ -34,31 +34,35 @@ class GameServicesTestUtil {
   private static GameServerDeploymentsServiceClient deploymentsClient;
   private static RealmsServiceClient realmsClient;
 
-  static {
-    try {
+  private static GameServerClustersServiceClient getClustersClient() throws IOException {
+    if (clustersClient == null) {
       clustersClient = GameServerClustersServiceClient.create();
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
-    try {
+    return clustersClient;
+  }
+
+  private static GameServerDeploymentsServiceClient getDeploymentsClient() throws IOException {
+    if (deploymentsClient == null) {
       deploymentsClient = GameServerDeploymentsServiceClient.create();
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
-    try {
+    return deploymentsClient;
+  }
+
+  private static RealmsServiceClient getRealmsClient() throws IOException {
+    if (realmsClient == null) {
       realmsClient = RealmsServiceClient.create();
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
+    return realmsClient;
   }
 
   public static void deleteExistingClusters(String parent) {
     try {
-      ListGameServerClustersPagedResponse response = clustersClient.listGameServerClusters(parent);
+      ListGameServerClustersPagedResponse response =
+          getClustersClient().listGameServerClusters(parent);
 
       for (GameServerCluster cluster : response.iterateAll()) {
         System.out.println("Deleting game cluster " + cluster.getName());
-        OperationFuture poll = clustersClient.deleteGameServerClusterAsync(cluster.getName());
+        OperationFuture poll = getClustersClient().deleteGameServerClusterAsync(cluster.getName());
         poll.get(1, TimeUnit.MINUTES);
       }
     } catch (Exception e) {
@@ -69,12 +73,12 @@ class GameServicesTestUtil {
   public static void deleteExistingDeployments(String parent) {
     try {
       ListGameServerDeploymentsPagedResponse response =
-          deploymentsClient.listGameServerDeployments(parent);
+          getDeploymentsClient().listGameServerDeployments(parent);
 
       for (GameServerDeployment deployment : response.iterateAll()) {
         System.out.println("Deleting game server deployment " + deployment.getName());
         OperationFuture poll =
-            deploymentsClient.deleteGameServerDeploymentAsync(deployment.getName());
+            getDeploymentsClient().deleteGameServerDeploymentAsync(deployment.getName());
         poll.get(1, TimeUnit.MINUTES);
       }
     } catch (Exception e) {
@@ -84,11 +88,11 @@ class GameServicesTestUtil {
 
   public static void deleteExistingRealms(String parent) {
     try {
-      ListRealmsPagedResponse response = realmsClient.listRealms(parent);
+      ListRealmsPagedResponse response = getRealmsClient().listRealms(parent);
 
       for (Realm realm : response.iterateAll()) {
         System.out.println("Deleting realm " + realm.getName());
-        OperationFuture poll = realmsClient.deleteRealmAsync(realm.getName());
+        OperationFuture poll = getRealmsClient().deleteRealmAsync(realm.getName());
         poll.get(1, TimeUnit.MINUTES);
       }
     } catch (Exception e) {
