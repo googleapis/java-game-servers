@@ -14,50 +14,38 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.realms;
+package com.example.gameservices.deployments;
 
-// [START cloud_game_servers_realm_create]
+// [START cloud_game_servers_deployment_delete]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1.CreateRealmRequest;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
 import com.google.cloud.gaming.v1.OperationMetadata;
-import com.google.cloud.gaming.v1.Realm;
-import com.google.cloud.gaming.v1.RealmsServiceClient;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class CreateRealm {
-  public static void createRealm(String projectId, String regionId, String realmId) {
+public class DeleteDeployment {
+  public static void deleteGameServerDeployment(String projectId, String deploymentId) {
     // String projectId = "your-project-id";
-    // String regionId = "us-central1-f";
-    // String realmId = "your-realm-id";
+    // String deploymentId = "your-game-server-deployment-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (RealmsServiceClient client = RealmsServiceClient.create()) {
-      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
-      String realmName = String.format("%s/realms/%s", parent, realmId);
+    try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
+      String parent = String.format("projects/%s/locations/global", projectId);
+      String deploymentName = String.format("%s/gameServerDeployments/%s", parent, deploymentId);
 
-      Realm realm =
-          Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
-
-      CreateRealmRequest request =
-          CreateRealmRequest.newBuilder()
-              .setParent(parent)
-              .setRealmId(realmId)
-              .setRealm(realm)
-              .build();
-
-      OperationFuture<Realm, OperationMetadata> call = client.createRealmAsync(request);
-      Realm result = call.get(1, TimeUnit.MINUTES);
-
-      System.out.println("Realm created: " + result.getName());
+      OperationFuture<Empty, OperationMetadata> call =
+          client.deleteGameServerDeploymentAsync(deploymentName);
+      call.get(1, TimeUnit.MINUTES);
+      System.out.println("Game Server Deployment deleted: " + deploymentName);
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Realm create request unsuccessful.");
+      System.err.println("Game Server Deployment delete request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_realm_create]
+// [END cloud_game_servers_deployment_delete]

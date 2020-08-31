@@ -14,44 +14,49 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.realms;
+package com.example.gameservices.deployments;
 
-// [START cloud_game_servers_realm_update]
+// [START cloud_game_servers_deployment_update]
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.gaming.v1.GameServerDeployment;
+import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
 import com.google.cloud.gaming.v1.OperationMetadata;
-import com.google.cloud.gaming.v1.Realm;
-import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class UpdateRealm {
-  public static void updateRealm(String projectId, String regionId, String realmId) {
+public class UpdateDeployment {
+  public static void updateGameServerDeployment(String projectId, String deploymentId) {
     // String projectId = "your-project-id";
-    // String regionId = "us-central1-f";
-    // String realmId = "your-realm-id";
+    // String deploymentId = "your-game-server-deployment-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (RealmsServiceClient client = RealmsServiceClient.create()) {
-      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
-      String realmName = String.format("%s/realms/%s", parent, realmId);
+    try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
+      String deploymentName =
+          String.format(
+              "projects/%s/locations/global/gameServerDeployments/%s", projectId, deploymentId);
 
-      Realm realm = Realm.newBuilder().setName(realmName).setTimeZone("America/New_York").build();
+      GameServerDeployment deployment =
+          GameServerDeployment.newBuilder()
+              .setName(deploymentName)
+              .putLabels("key", "value")
+              .build();
 
-      FieldMask fieldMask = FieldMask.newBuilder().addPaths("time_zone").build();
+      FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
 
-      OperationFuture<Realm, OperationMetadata> call = client.updateRealmAsync(realm, fieldMask);
+      OperationFuture<GameServerDeployment, OperationMetadata> call =
+          client.updateGameServerDeploymentAsync(deployment, fieldMask);
 
-      Realm updated = call.get(1, TimeUnit.MINUTES);
-      System.out.println("Realm updated: " + updated.getName());
+      GameServerDeployment updated = call.get(1, TimeUnit.MINUTES);
+      System.out.println("Game Server Deployment updated: " + updated.getName());
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Realm update request unsuccessful.");
+      System.err.println("Game Server Deployment update request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_realm_update]
+// [END cloud_game_servers_deployment_update]

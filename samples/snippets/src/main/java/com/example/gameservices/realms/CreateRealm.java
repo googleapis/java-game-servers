@@ -14,48 +14,50 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.clusters;
+package com.example.gameservices.realms;
 
-// [START cloud_game_servers_cluster_update]
+// [START cloud_game_servers_realm_create]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.gaming.v1.GameServerCluster;
-import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.CreateRealmRequest;
 import com.google.cloud.gaming.v1.OperationMetadata;
-import com.google.protobuf.FieldMask;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class UpdateCluster {
-  public static void updateGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+public class CreateRealm {
+  public static void createRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
-    // String clusterId = "your-game-server-cluster-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
-      String parent =
-          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
-      String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
+    try (RealmsServiceClient client = RealmsServiceClient.create()) {
+      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
+      String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      GameServerCluster cluster =
-          GameServerCluster.newBuilder().setName(clusterName).putLabels("key", "value").build();
+      Realm realm =
+          Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
 
-      FieldMask fieldMask = FieldMask.newBuilder().addPaths("labels").build();
-      OperationFuture<GameServerCluster, OperationMetadata> call =
-          client.updateGameServerClusterAsync(cluster, fieldMask);
+      CreateRealmRequest request =
+          CreateRealmRequest.newBuilder()
+              .setParent(parent)
+              .setRealmId(realmId)
+              .setRealm(realm)
+              .build();
 
-      GameServerCluster updated = call.get(1, TimeUnit.MINUTES);
-      System.out.println("Game Server Cluster updated: " + updated.getName());
+      OperationFuture<Realm, OperationMetadata> call = client.createRealmAsync(request);
+      Realm result = call.get(1, TimeUnit.MINUTES);
+
+      System.out.println("Realm created: " + result.getName());
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster update request unsuccessful.");
+      System.err.println("Realm create request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_cluster_update]
+// [END cloud_game_servers_realm_create]

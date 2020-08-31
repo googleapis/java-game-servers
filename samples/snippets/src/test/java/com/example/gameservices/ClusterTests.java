@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples;
+package com.example.gameservices;
 
 import static org.junit.Assert.assertTrue;
 
-import com.example.gameservices.samples.clusters.CreateCluster;
-import com.example.gameservices.samples.clusters.DeleteCluster;
-import com.example.gameservices.samples.clusters.GetCluster;
-import com.example.gameservices.samples.clusters.ListClusters;
-import com.example.gameservices.samples.clusters.UpdateCluster;
-import com.example.gameservices.samples.realms.CreateRealm;
+import com.example.gameservices.clusters.CreateCluster;
+import com.example.gameservices.clusters.DeleteCluster;
+import com.example.gameservices.clusters.GetCluster;
+import com.example.gameservices.clusters.ListClusters;
+import com.example.gameservices.clusters.UpdateCluster;
+import com.example.gameservices.realms.CreateRealm;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

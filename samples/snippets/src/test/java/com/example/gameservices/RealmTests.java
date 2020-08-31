@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples;
+package com.example.gameservices;
 
 import static org.junit.Assert.assertTrue;
 
-import com.example.gameservices.samples.realms.CreateRealm;
-import com.example.gameservices.samples.realms.DeleteRealm;
-import com.example.gameservices.samples.realms.GetRealm;
-import com.example.gameservices.samples.realms.ListRealms;
-import com.example.gameservices.samples.realms.UpdateRealm;
+import com.example.gameservices.realms.CreateRealm;
+import com.example.gameservices.realms.DeleteRealm;
+import com.example.gameservices.realms.GetRealm;
+import com.example.gameservices.realms.ListRealms;
+import com.example.gameservices.realms.UpdateRealm;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

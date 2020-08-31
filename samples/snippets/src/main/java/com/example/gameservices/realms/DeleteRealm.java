@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.realms;
+package com.example.gameservices.realms;
 
-// [START cloud_game_servers_realm_get]
+// [START cloud_game_servers_realm_delete]
 
-import com.google.cloud.gaming.v1.Realm;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.gaming.v1.OperationMetadata;
 import com.google.cloud.gaming.v1.RealmsServiceClient;
+import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-public class GetRealm {
-  public static void getRealm(String projectId, String regionId, String realmId) {
+public class DeleteRealm {
+  public static void deleteRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -31,15 +36,17 @@ public class GetRealm {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (RealmsServiceClient client = RealmsServiceClient.create()) {
-      String realmName =
-          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
+      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
+      String realmName = String.format("%s/realms/%s", parent, realmId);
 
-      Realm allocationPolicy = client.getRealm(realmName);
+      OperationFuture<Empty, OperationMetadata> call = client.deleteRealmAsync(realmName);
 
-      System.out.println("Realm found: " + allocationPolicy.getName());
-    } catch (IOException e) {
+      call.get(1, TimeUnit.MINUTES);
+      System.out.println("Realm deleted: " + realmName);
+    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
+      System.err.println("Realm delete request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_realm_get]
+// [END cloud_game_servers_realm_delete]

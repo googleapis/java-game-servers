@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples;
+package com.example.gameservices;
 
 import static org.junit.Assert.assertTrue;
 
-import com.example.gameservices.samples.deployments.CreateDeployment;
-import com.example.gameservices.samples.deployments.DeleteDeployment;
-import com.example.gameservices.samples.deployments.GetDeployment;
-import com.example.gameservices.samples.deployments.ListDeployments;
-import com.example.gameservices.samples.deployments.UpdateDeployment;
+import com.example.gameservices.deployments.CreateDeployment;
+import com.example.gameservices.deployments.DeleteDeployment;
+import com.example.gameservices.deployments.GetDeployment;
+import com.example.gameservices.deployments.ListDeployments;
+import com.example.gameservices.deployments.UpdateDeployment;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

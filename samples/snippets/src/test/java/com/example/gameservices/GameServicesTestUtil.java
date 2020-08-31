@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples;
+package com.example.gameservices;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.gaming.v1.GameServerCluster;

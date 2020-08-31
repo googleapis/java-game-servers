@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.clusters;
+package com.example.gameservices.clusters;
 
 // [START cloud_game_servers_cluster_get]
 

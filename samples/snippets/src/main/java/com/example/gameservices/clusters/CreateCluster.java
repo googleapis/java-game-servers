@@ -14,26 +14,31 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.clusters;
+package com.example.gameservices.clusters;
 
-// [START cloud_game_servers_cluster_delete]
+// [START cloud_game_servers_cluster_create]
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.gaming.v1.CreateGameServerClusterRequest;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClusterConnectionInfo;
 import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GkeClusterReference;
 import com.google.cloud.gaming.v1.OperationMetadata;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class DeleteCluster {
+public class CreateCluster {
 
-  public static void deleteGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+  public static void createGameServerCluster(
+      String projectId, String regionId, String realmId, String clusterId, String gkeName) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
+    // String realmId = "your-realm-id";
     // String clusterId = "your-game-server-cluster-id";
+    // String gkeName = "projects/your-project-id/locations/us-central1/clusters/test";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
@@ -42,15 +47,32 @@ public class DeleteCluster {
           String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
       String clusterName = String.format("%s/gameServerClusters/%s", parent, clusterId);
 
-      OperationFuture<Empty, OperationMetadata> call =
-          client.deleteGameServerClusterAsync(clusterName);
+      GameServerCluster gameServerCluster =
+          GameServerCluster.newBuilder()
+              .setName(clusterName)
+              .setConnectionInfo(
+                  GameServerClusterConnectionInfo.newBuilder()
+                      .setGkeClusterReference(
+                          GkeClusterReference.newBuilder().setCluster(gkeName).build())
+                      .setNamespace("default"))
+              .build();
 
-      call.get(1, TimeUnit.MINUTES);
-      System.out.println("Game Server Cluster deleted: " + clusterName);
+      CreateGameServerClusterRequest request =
+          CreateGameServerClusterRequest.newBuilder()
+              .setParent(parent)
+              .setGameServerClusterId(clusterId)
+              .setGameServerCluster(gameServerCluster)
+              .build();
+
+      OperationFuture<GameServerCluster, OperationMetadata> call =
+          client.createGameServerClusterAsync(request);
+
+      GameServerCluster created = call.get(1, TimeUnit.MINUTES);
+      System.out.println("Game Server Cluster created: " + created.getName());
     } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster delete request unsuccessful.");
+      System.err.println("Game Server Cluster create request unsuccessful.");
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_cluster_delete]
+// [END cloud_game_servers_cluster_create]

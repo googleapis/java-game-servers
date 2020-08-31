@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.deployments;
+package com.example.gameservices.realms;
 
-// [START cloud_game_servers_deployment_get]
+// [START cloud_game_servers_realm_get]
 
-import com.google.cloud.gaming.v1.GameServerDeployment;
-import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient;
+import com.google.cloud.gaming.v1.Realm;
+import com.google.cloud.gaming.v1.RealmsServiceClient;
 import java.io.IOException;
 
-public class GetDeployment {
-  public static void getGameServerDeployment(String projectId, String deploymentId) {
+public class GetRealm {
+  public static void getRealm(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
-    // String deploymentId = "your-game-server-deployment-id";
+    // String regionId = "us-central1-f";
+    // String realmId = "your-realm-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (GameServerDeploymentsServiceClient client = GameServerDeploymentsServiceClient.create()) {
-      String deploymentName =
-          String.format(
-              "projects/%s/locations/global/gameServerDeployments/%s", projectId, deploymentId);
+    try (RealmsServiceClient client = RealmsServiceClient.create()) {
+      String realmName =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
 
-      GameServerDeployment deployment = client.getGameServerDeployment(deploymentName);
+      Realm allocationPolicy = client.getRealm(realmName);
 
-      System.out.println("Game Server Deployment found: " + deployment.getName());
+      System.out.println("Realm found: " + allocationPolicy.getName());
     } catch (IOException e) {
       e.printStackTrace(System.err);
     }
   }
 }
-// [END cloud_game_servers_deployment_get]
+// [END cloud_game_servers_realm_get]

@@ -14,41 +14,43 @@
  * limitations under the License.
  */
 
-package com.example.gameservices.samples.realms;
+package com.example.gameservices.clusters;
 
-// [START cloud_game_servers_realm_list]
+// [START cloud_game_servers_cluster_list]
 
-import com.google.cloud.gaming.v1.ListRealmsRequest;
-import com.google.cloud.gaming.v1.Realm;
-import com.google.cloud.gaming.v1.RealmsServiceClient;
-import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
+import com.google.cloud.gaming.v1.GameServerCluster;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient;
+import com.google.cloud.gaming.v1.GameServerClustersServiceClient.ListGameServerClustersPagedResponse;
+import com.google.cloud.gaming.v1.ListGameServerClustersRequest;
 import com.google.common.base.Strings;
 import java.io.IOException;
 
-public class ListRealms {
-  public static void listRealms(String projectId, String regionId) {
+public class ListClusters {
+
+  public static void listGameServerClusters(String projectId, String regionId, String realmId) {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (RealmsServiceClient client = RealmsServiceClient.create()) {
-      String parent = String.format("projects/%s/locations/%s", projectId, regionId);
+    try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
+      String parent =
+          String.format("projects/%s/locations/%s/realms/%s", projectId, regionId, realmId);
 
-      ListRealmsPagedResponse response = client.listRealms(parent);
-      for (Realm realm : response.iterateAll()) {
-        System.out.println("Realm found: " + realm.getName());
+      ListGameServerClustersPagedResponse response = client.listGameServerClusters(parent);
+      for (GameServerCluster cluster : response.iterateAll()) {
+        System.out.println("Game Server Cluster found: " + cluster.getName());
       }
 
       while (!Strings.isNullOrEmpty(response.getNextPageToken())) {
-        ListRealmsRequest request =
-            ListRealmsRequest.newBuilder()
+        ListGameServerClustersRequest request =
+            ListGameServerClustersRequest.newBuilder()
                 .setParent(parent)
                 .setPageToken(response.getNextPageToken())
                 .build();
-        response = client.listRealms(request);
-        for (Realm realm : response.iterateAll()) {
-          System.out.println("Realm found: " + realm.getName());
+        response = client.listGameServerClusters(request);
+        for (GameServerCluster cluster : response.iterateAll()) {
+          System.out.println("Game Server Cluster found: " + cluster.getName());
         }
       }
     } catch (IOException e) {
@@ -56,4 +58,4 @@ public class ListRealms {
     }
   }
 }
-// [END cloud_game_servers_realm_list]
+// [END cloud_game_servers_cluster_list]
