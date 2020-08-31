@@ -29,7 +29,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class UpdateRealm {
-  public static void updateRealm(String projectId, String regionId, String realmId) {
+  public static void updateRealm(String projectId, String regionId, String realmId)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -48,9 +49,6 @@ public class UpdateRealm {
 
       Realm updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Realm updated: " + updated.getName());
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Realm update request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

@@ -33,7 +33,8 @@ import java.util.concurrent.TimeoutException;
 public class CreateCluster {
 
   public static void createGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId, String gkeName) {
+      String projectId, String regionId, String realmId, String clusterId, String gkeName)
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -69,9 +70,6 @@ public class CreateCluster {
 
       GameServerCluster created = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster created: " + created.getName());
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster create request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

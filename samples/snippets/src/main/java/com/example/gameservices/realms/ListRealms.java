@@ -26,7 +26,7 @@ import com.google.common.base.Strings;
 import java.io.IOException;
 
 public class ListRealms {
-  public static void listRealms(String projectId, String regionId) {
+  public static void listRealms(String projectId, String regionId) throws IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -51,8 +51,6 @@ public class ListRealms {
           System.out.println("Realm found: " + realm.getName());
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
   }
 }

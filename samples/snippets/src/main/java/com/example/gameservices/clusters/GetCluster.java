@@ -25,7 +25,7 @@ import java.io.IOException;
 public class GetCluster {
 
   public static void getGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+      String projectId, String regionId, String realmId, String clusterId) throws IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -41,8 +41,6 @@ public class GetCluster {
       GameServerCluster cluster = client.getGameServerCluster(clusterName);
 
       System.out.println("Game Server Cluster found: " + cluster.getName());
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
   }
 }

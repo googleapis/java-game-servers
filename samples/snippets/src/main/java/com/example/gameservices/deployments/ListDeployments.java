@@ -26,7 +26,7 @@ import com.google.common.base.Strings;
 import java.io.IOException;
 
 public class ListDeployments {
-  public static void listGameServerDeployments(String projectId) {
+  public static void listGameServerDeployments(String projectId) throws IOException {
     // String projectId = "your-project-id";
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
@@ -50,8 +50,6 @@ public class ListDeployments {
           System.out.println("Game Server Deployment found: " + deployment.getName());
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
   }
 }

@@ -30,7 +30,8 @@ import java.util.concurrent.TimeoutException;
 public class DeleteCluster {
 
   public static void deleteGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+      String projectId, String regionId, String realmId, String clusterId)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String clusterId = "your-game-server-cluster-id";
@@ -47,9 +48,6 @@ public class DeleteCluster {
 
       call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster deleted: " + clusterName);
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster delete request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

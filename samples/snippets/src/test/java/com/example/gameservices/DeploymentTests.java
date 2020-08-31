@@ -24,7 +24,10 @@ import com.example.gameservices.deployments.GetDeployment;
 import com.example.gameservices.deployments.ListDeployments;
 import com.example.gameservices.deployments.UpdateDeployment;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,7 +55,8 @@ public class DeploymentTests {
   }
 
   @BeforeClass
-  public static void init() {
+  public static void init()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     GameServicesTestUtil.deleteExistingDeployments(parentName);
     CreateDeployment.createGameServerDeployment(PROJECT_ID, deploymentId);
   }
@@ -69,7 +73,8 @@ public class DeploymentTests {
   }
 
   @Test
-  public void createDeleteGameServerDeploymentTest() {
+  public void createDeleteGameServerDeploymentTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     String newDeploymentId = "deployment-2";
     String newDeploymentName =
         String.format("%s/gameServerDeployments/%s", parentName, newDeploymentId);
@@ -80,21 +85,22 @@ public class DeploymentTests {
   }
 
   @Test
-  public void getGameServerDeploymentTest() {
+  public void getGameServerDeploymentTest() throws IOException {
     GetDeployment.getGameServerDeployment(PROJECT_ID, deploymentId);
 
     assertTrue(bout.toString().contains("Game Server Deployment found: " + deploymentName));
   }
 
   @Test
-  public void listGameServerDeploymentsTest() {
+  public void listGameServerDeploymentsTest() throws IOException {
     ListDeployments.listGameServerDeployments(PROJECT_ID);
 
     assertTrue(bout.toString().contains("Game Server Deployment found: " + deploymentName));
   }
 
   @Test
-  public void updateGameServerDeploymentTest() {
+  public void updateGameServerDeploymentTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     UpdateDeployment.updateGameServerDeployment(PROJECT_ID, deploymentId);
     assertTrue(bout.toString().contains("Game Server Deployment updated: " + deploymentName));
   }

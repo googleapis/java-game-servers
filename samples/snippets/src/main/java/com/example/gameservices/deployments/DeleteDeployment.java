@@ -28,7 +28,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class DeleteDeployment {
-  public static void deleteGameServerDeployment(String projectId, String deploymentId) {
+  public static void deleteGameServerDeployment(String projectId, String deploymentId)
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // String projectId = "your-project-id";
     // String deploymentId = "your-game-server-deployment-id";
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -42,9 +43,6 @@ public class DeleteDeployment {
           client.deleteGameServerDeploymentAsync(deploymentName);
       call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Deployment deleted: " + deploymentName);
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Deployment delete request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

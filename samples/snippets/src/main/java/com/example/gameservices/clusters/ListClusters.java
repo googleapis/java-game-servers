@@ -27,7 +27,8 @@ import java.io.IOException;
 
 public class ListClusters {
 
-  public static void listGameServerClusters(String projectId, String regionId, String realmId) {
+  public static void listGameServerClusters(String projectId, String regionId, String realmId)
+      throws IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -53,8 +54,6 @@ public class ListClusters {
           System.out.println("Game Server Cluster found: " + cluster.getName());
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
   }
 }

@@ -25,7 +25,10 @@ import com.example.gameservices.clusters.ListClusters;
 import com.example.gameservices.clusters.UpdateCluster;
 import com.example.gameservices.realms.CreateRealm;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -70,7 +73,8 @@ public class ClusterTests {
   }
 
   @BeforeClass
-  public static void init() {
+  public static void init()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // Delete all existing clusters and realms.
     GameServicesTestUtil.deleteExistingClusters(realmName);
     GameServicesTestUtil.deleteExistingRealms(parentName);
@@ -92,7 +96,8 @@ public class ClusterTests {
   }
 
   @Test
-  public void createDeleteClusterTest() {
+  public void createDeleteClusterTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     String newClusterId = "cluster-2";
     String newClusterName = String.format("%s/gameServerClusters/%s", realmName, newClusterId);
     CreateCluster.createGameServerCluster(
@@ -103,21 +108,22 @@ public class ClusterTests {
   }
 
   @Test
-  public void getClusterTest() {
+  public void getClusterTest() throws IOException {
     GetCluster.getGameServerCluster(PROJECT_ID, REGION_ID, realmId, clusterId);
 
     assertTrue(bout.toString().contains("Game Server Cluster found: " + clusterName));
   }
 
   @Test
-  public void listClustersTest() {
+  public void listClustersTest() throws IOException {
     ListClusters.listGameServerClusters(PROJECT_ID, REGION_ID, realmId);
 
     assertTrue(bout.toString().contains("Game Server Cluster found: " + clusterName));
   }
 
   @Test
-  public void updateClusterTest() {
+  public void updateClusterTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     UpdateCluster.updateGameServerCluster(PROJECT_ID, REGION_ID, realmId, clusterId);
 
     assertTrue(bout.toString().contains("Game Server Cluster updated: " + clusterName));

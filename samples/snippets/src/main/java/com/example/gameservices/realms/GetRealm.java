@@ -23,7 +23,8 @@ import com.google.cloud.gaming.v1.RealmsServiceClient;
 import java.io.IOException;
 
 public class GetRealm {
-  public static void getRealm(String projectId, String regionId, String realmId) {
+  public static void getRealm(String projectId, String regionId, String realmId)
+      throws IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -37,8 +38,6 @@ public class GetRealm {
       Realm allocationPolicy = client.getRealm(realmName);
 
       System.out.println("Realm found: " + allocationPolicy.getName());
-    } catch (IOException e) {
-      e.printStackTrace(System.err);
     }
   }
 }

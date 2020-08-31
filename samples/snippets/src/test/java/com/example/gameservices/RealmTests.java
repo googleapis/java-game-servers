@@ -24,7 +24,10 @@ import com.example.gameservices.realms.GetRealm;
 import com.example.gameservices.realms.ListRealms;
 import com.example.gameservices.realms.UpdateRealm;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -54,7 +57,8 @@ public class RealmTests {
   }
 
   @BeforeClass
-  public static void init() {
+  public static void init()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     GameServicesTestUtil.deleteExistingRealms(parentName);
     CreateRealm.createRealm(PROJECT_ID, REGION_ID, realmId);
   }
@@ -71,7 +75,8 @@ public class RealmTests {
   }
 
   @Test
-  public void createDeleteRealmTest() {
+  public void createDeleteRealmTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     String newRealmId = "realm-2";
     String newRealmName =
         String.format("projects/%s/locations/%s/realms/%s", PROJECT_ID, REGION_ID, newRealmId);
@@ -83,21 +88,22 @@ public class RealmTests {
   }
 
   @Test
-  public void getRealmTest() {
+  public void getRealmTest() throws IOException {
     GetRealm.getRealm(PROJECT_ID, REGION_ID, realmId);
 
     assertTrue(bout.toString().contains("Realm found: " + realmName));
   }
 
   @Test
-  public void listRealmsTest() {
+  public void listRealmsTest() throws IOException {
     ListRealms.listRealms(PROJECT_ID, REGION_ID);
 
     assertTrue(bout.toString().contains("Realm found: " + realmName));
   }
 
   @Test
-  public void updateRealmTest() {
+  public void updateRealmTest()
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     UpdateRealm.updateRealm(PROJECT_ID, REGION_ID, realmId);
 
     assertTrue(bout.toString().contains("Realm updated: " + realmName));

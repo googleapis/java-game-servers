@@ -29,7 +29,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class UpdateDeployment {
-  public static void updateGameServerDeployment(String projectId, String deploymentId) {
+  public static void updateGameServerDeployment(String projectId, String deploymentId)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // String projectId = "your-project-id";
     // String deploymentId = "your-game-server-deployment-id";
     // Initialize client that will be used to send requests. This client only needs to be created
@@ -53,9 +54,6 @@ public class UpdateDeployment {
 
       GameServerDeployment updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Deployment updated: " + updated.getName());
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Deployment update request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

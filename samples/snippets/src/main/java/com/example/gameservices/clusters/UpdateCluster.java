@@ -30,7 +30,8 @@ import java.util.concurrent.TimeoutException;
 
 public class UpdateCluster {
   public static void updateGameServerCluster(
-      String projectId, String regionId, String realmId, String clusterId) {
+      String projectId, String regionId, String realmId, String clusterId)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -52,9 +53,6 @@ public class UpdateCluster {
 
       GameServerCluster updated = call.get(1, TimeUnit.MINUTES);
       System.out.println("Game Server Cluster updated: " + updated.getName());
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Game Server Cluster update request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }

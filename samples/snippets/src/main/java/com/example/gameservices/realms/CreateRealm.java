@@ -29,7 +29,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class CreateRealm {
-  public static void createRealm(String projectId, String regionId, String realmId) {
+  public static void createRealm(String projectId, String regionId, String realmId)
+      throws InterruptedException, ExecutionException, TimeoutException, IOException {
     // String projectId = "your-project-id";
     // String regionId = "us-central1-f";
     // String realmId = "your-realm-id";
@@ -54,9 +55,6 @@ public class CreateRealm {
       Realm result = call.get(1, TimeUnit.MINUTES);
 
       System.out.println("Realm created: " + result.getName());
-    } catch (IOException | InterruptedException | ExecutionException | TimeoutException e) {
-      System.err.println("Realm create request unsuccessful.");
-      e.printStackTrace(System.err);
     }
   }
 }
