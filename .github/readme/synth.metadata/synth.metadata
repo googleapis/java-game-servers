@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-game-servers.git",
+        "sha": "bb6cf80e67f818a31acbf59f6b9fcb45446df5c9"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "477764cc4ee6db346d3febef2bb1ea0abf27de52"
+      }
+    }
+  ]
+}
