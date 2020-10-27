@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-game-servers-parent</artifactId>
-    <version>0.22.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
+    <version>1.0.0</version><!-- {x-version-update:google-cloud-game-servers:current} -->
   </parent>
   <dependencies>
     <dependency>
