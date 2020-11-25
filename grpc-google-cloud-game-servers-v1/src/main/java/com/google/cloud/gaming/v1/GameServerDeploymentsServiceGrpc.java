@@ -22,14 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * The game server deployment is used to control the deployment of Agones
- * fleets.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/gaming/v1/game_server_deployments_service.proto")
@@ -554,24 +547,11 @@ public final class GameServerDeploymentsServiceGrpc {
     return GameServerDeploymentsServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server deployment is used to control the deployment of Agones
-   * fleets.
-   * </pre>
-   */
+  /** */
   public abstract static class GameServerDeploymentsServiceImplBase
       implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server deployments in a given project and location.
-     * </pre>
-     */
+    /** */
     public void listGameServerDeployments(
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
@@ -579,13 +559,7 @@ public final class GameServerDeploymentsServiceGrpc {
       asyncUnimplementedUnaryCall(getListGameServerDeploymentsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server deployment.
-     * </pre>
-     */
+    /** */
     public void getGameServerDeployment(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeployment>
@@ -593,52 +567,28 @@ public final class GameServerDeploymentsServiceGrpc {
       asyncUnimplementedUnaryCall(getGetGameServerDeploymentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server deployment in a given project and location.
-     * </pre>
-     */
+    /** */
     public void createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateGameServerDeploymentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server deployment.
-     * </pre>
-     */
+    /** */
     public void deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteGameServerDeploymentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a game server deployment.
-     * </pre>
-     */
+    /** */
     public void updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateGameServerDeploymentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details a single game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public void getGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeploymentRollout>
@@ -646,32 +596,14 @@ public final class GameServerDeploymentsServiceGrpc {
       asyncUnimplementedUnaryCall(getGetGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single game server deployment rollout.
-     * The method will not return an error if the update does not affect any
-     * existing realms. For example - if the default_game_server_config is changed
-     * but all existing realms use the override, that is valid. Similarly, if a
-     * non existing realm is explicitly called out in game_server_config_overrides
-     * field, that will also not result in an error.
-     * </pre>
-     */
+    /** */
     public void updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews the game server deployment rollout. This API does not mutate the
-     * rollout resource.
-     * </pre>
-     */
+    /** */
     public void previewGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<
@@ -680,15 +612,7 @@ public final class GameServerDeploymentsServiceGrpc {
       asyncUnimplementedUnaryCall(getPreviewGameServerDeploymentRolloutMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information about the current state of the game server
-     * deployment. Gathers all the Agones fleets and Agones autoscalers,
-     * including fleets running an older version of the game server deployment.
-     * </pre>
-     */
+    /** */
     public void fetchDeploymentState(
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
@@ -766,14 +690,7 @@ public final class GameServerDeploymentsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server deployment is used to control the deployment of Agones
-   * fleets.
-   * </pre>
-   */
+  /** */
   public static final class GameServerDeploymentsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<GameServerDeploymentsServiceStub> {
     private GameServerDeploymentsServiceStub(
@@ -787,13 +704,7 @@ public final class GameServerDeploymentsServiceGrpc {
       return new GameServerDeploymentsServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server deployments in a given project and location.
-     * </pre>
-     */
+    /** */
     public void listGameServerDeployments(
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
@@ -804,13 +715,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server deployment.
-     * </pre>
-     */
+    /** */
     public void getGameServerDeployment(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeployment>
@@ -821,13 +726,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server deployment in a given project and location.
-     * </pre>
-     */
+    /** */
     public void createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -837,13 +736,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server deployment.
-     * </pre>
-     */
+    /** */
     public void deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -853,13 +746,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a game server deployment.
-     * </pre>
-     */
+    /** */
     public void updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -869,13 +756,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details a single game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public void getGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeploymentRollout>
@@ -886,18 +767,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single game server deployment rollout.
-     * The method will not return an error if the update does not affect any
-     * existing realms. For example - if the default_game_server_config is changed
-     * but all existing realms use the override, that is valid. Similarly, if a
-     * non existing realm is explicitly called out in game_server_config_overrides
-     * field, that will also not result in an error.
-     * </pre>
-     */
+    /** */
     public void updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -907,14 +777,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews the game server deployment rollout. This API does not mutate the
-     * rollout resource.
-     * </pre>
-     */
+    /** */
     public void previewGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<
@@ -926,15 +789,7 @@ public final class GameServerDeploymentsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information about the current state of the game server
-     * deployment. Gathers all the Agones fleets and Agones autoscalers,
-     * including fleets running an older version of the game server deployment.
-     * </pre>
-     */
+    /** */
     public void fetchDeploymentState(
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
@@ -946,14 +801,7 @@ public final class GameServerDeploymentsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server deployment is used to control the deployment of Agones
-   * fleets.
-   * </pre>
-   */
+  /** */
   public static final class GameServerDeploymentsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<GameServerDeploymentsServiceBlockingStub> {
     private GameServerDeploymentsServiceBlockingStub(
@@ -967,110 +815,56 @@ public final class GameServerDeploymentsServiceGrpc {
       return new GameServerDeploymentsServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server deployments in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse listGameServerDeployments(
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListGameServerDeploymentsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.GameServerDeployment getGameServerDeployment(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server deployment in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateGameServerDeploymentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details a single game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.GameServerDeploymentRollout getGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single game server deployment rollout.
-     * The method will not return an error if the update does not affect any
-     * existing realms. For example - if the default_game_server_config is changed
-     * but all existing realms use the override, that is valid. Similarly, if a
-     * non existing realm is explicitly called out in game_server_config_overrides
-     * field, that will also not result in an error.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews the game server deployment rollout. This API does not mutate the
-     * rollout resource.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse
         previewGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request) {
@@ -1078,15 +872,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel(), getPreviewGameServerDeploymentRolloutMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information about the current state of the game server
-     * deployment. Gathers all the Agones fleets and Agones autoscalers,
-     * including fleets running an older version of the game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.FetchDeploymentStateResponse fetchDeploymentState(
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request) {
       return blockingUnaryCall(
@@ -1094,14 +880,7 @@ public final class GameServerDeploymentsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server deployment is used to control the deployment of Agones
-   * fleets.
-   * </pre>
-   */
+  /** */
   public static final class GameServerDeploymentsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<GameServerDeploymentsServiceFutureStub> {
     private GameServerDeploymentsServiceFutureStub(
@@ -1115,13 +894,7 @@ public final class GameServerDeploymentsServiceGrpc {
       return new GameServerDeploymentsServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server deployments in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
         listGameServerDeployments(
@@ -1130,13 +903,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel().newCall(getListGameServerDeploymentsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerDeployment>
         getGameServerDeployment(com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request) {
@@ -1144,13 +911,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel().newCall(getGetGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server deployment in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerDeployment(
             com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request) {
@@ -1158,13 +919,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel().newCall(getCreateGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerDeployment(
             com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request) {
@@ -1172,13 +927,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel().newCall(getDeleteGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerDeployment(
             com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request) {
@@ -1186,13 +935,7 @@ public final class GameServerDeploymentsServiceGrpc {
           getChannel().newCall(getUpdateGameServerDeploymentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details a single game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerDeploymentRollout>
         getGameServerDeploymentRollout(
@@ -1202,18 +945,7 @@ public final class GameServerDeploymentsServiceGrpc {
           request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single game server deployment rollout.
-     * The method will not return an error if the update does not affect any
-     * existing realms. For example - if the default_game_server_config is changed
-     * but all existing realms use the override, that is valid. Similarly, if a
-     * non existing realm is explicitly called out in game_server_config_overrides
-     * field, that will also not result in an error.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerDeploymentRollout(
             com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request) {
@@ -1222,14 +954,7 @@ public final class GameServerDeploymentsServiceGrpc {
           request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews the game server deployment rollout. This API does not mutate the
-     * rollout resource.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>
         previewGameServerDeploymentRollout(
@@ -1239,15 +964,7 @@ public final class GameServerDeploymentsServiceGrpc {
           request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves information about the current state of the game server
-     * deployment. Gathers all the Agones fleets and Agones autoscalers,
-     * including fleets running an older version of the game server deployment.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
         fetchDeploymentState(com.google.cloud.gaming.v1.FetchDeploymentStateRequest request) {
