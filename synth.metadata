@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-game-servers.git",
-        "sha": "0fc3423167d98068d0e97093c6a1dc62bfb5b7c9"
+        "sha": "7dbb859dcd19bceb2bd64c91311e556b13f90165"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "fb84629a56703d04f0b5304c4a9ade7313ebd92d",
-        "internalRef": "325339219"
+        "sha": "905f25da757fbb0504a99b7829aa4e79ce7e1231",
+        "internalRef": "345080551"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "fb84629a56703d04f0b5304c4a9ade7313ebd92d",
-        "internalRef": "325339219"
+        "sha": "905f25da757fbb0504a99b7829aa4e79ce7e1231",
+        "internalRef": "345080551"
       }
     },
     {
@@ -245,7 +245,6 @@
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentName.java",
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentOrBuilder.java",
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentRollout.java",
-    "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentRolloutName.java",
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentRolloutOrBuilder.java",
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeployments.java",
     "proto-google-cloud-game-servers-v1/src/main/java/com/google/cloud/gaming/v1/GameServerDeploymentsServiceOuterClass.java",
@@ -381,7 +380,6 @@
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentName.java",
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentOrBuilder.java",
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentRollout.java",
-    "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentRolloutName.java",
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentRolloutOrBuilder.java",
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeployments.java",
     "proto-google-cloud-game-servers-v1beta/src/main/java/com/google/cloud/gaming/v1beta/GameServerDeploymentsServiceOuterClass.java",

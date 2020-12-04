@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1beta;
 
 import com.google.api.core.ApiFunction;
@@ -36,10 +37,11 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A realm is a grouping of game server clusters that are considered
  * interchangeable.
@@ -47,16 +49,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
- *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
- *   Realm response = realmsServiceClient.getRealm(name);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the realmsServiceClient object to clean up resources such
+ * <p>Note: close() needs to be called on the RealmsServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -84,30 +77,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RealmsServiceSettings realmsServiceSettings =
  *     RealmsServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * RealmsServiceClient realmsServiceClient =
- *     RealmsServiceClient.create(realmsServiceSettings);
- * </code>
- * </pre>
+ * RealmsServiceClient realmsServiceClient = RealmsServiceClient.create(realmsServiceSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * RealmsServiceSettings realmsServiceSettings =
  *     RealmsServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
- * RealmsServiceClient realmsServiceClient =
- *     RealmsServiceClient.create(realmsServiceSettings);
- * </code>
- * </pre>
+ * RealmsServiceClient realmsServiceClient = RealmsServiceClient.create(realmsServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class RealmsServiceClient implements BackgroundResource {
   private final RealmsServiceSettings settings;
   private final RealmsServiceStub stub;
@@ -129,7 +118,7 @@ public class RealmsServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of RealmsServiceClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use RealmsServiceSettings}.
+   * for advanced usage - prefer using create(RealmsServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RealmsServiceClient create(RealmsServiceStub stub) {
@@ -167,26 +156,13 @@ public class RealmsServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationsClient getOperationsClient() {
     return operationsClient;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists realms in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Realm element : realmsServiceClient.listRealms(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
@@ -194,24 +170,15 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final ListRealmsPagedResponse listRealms(LocationName parent) {
     ListRealmsRequest request =
-        ListRealmsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+        ListRealmsRequest.newBuilder()
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .build();
     return listRealms(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists realms in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (Realm element : realmsServiceClient.listRealms(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
@@ -222,23 +189,9 @@ public class RealmsServiceClient implements BackgroundResource {
     return listRealms(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists realms in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListRealmsRequest request = ListRealmsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Realm element : realmsServiceClient.listRealms(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -247,73 +200,29 @@ public class RealmsServiceClient implements BackgroundResource {
     return listRealmsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists realms in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListRealmsRequest request = ListRealmsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListRealmsPagedResponse&gt; future = realmsServiceClient.listRealmsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Realm element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRealmsRequest, ListRealmsPagedResponse> listRealmsPagedCallable() {
     return stub.listRealmsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists realms in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   ListRealmsRequest request = ListRealmsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListRealmsResponse response = realmsServiceClient.listRealmsCallable().call(request);
-   *     for (Realm element : response.getRealmsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListRealmsRequest, ListRealmsResponse> listRealmsCallable() {
     return stub.listRealmsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   Realm response = realmsServiceClient.getRealm(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the realm to retrieve. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
@@ -321,22 +230,13 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final Realm getRealm(RealmName name) {
     GetRealmRequest request =
-        GetRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        GetRealmRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
     return getRealm(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   Realm response = realmsServiceClient.getRealm(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the realm to retrieve. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
@@ -347,21 +247,9 @@ public class RealmsServiceClient implements BackgroundResource {
     return getRealm(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   GetRealmRequest request = GetRealmRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Realm response = realmsServiceClient.getRealm(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,85 +258,47 @@ public class RealmsServiceClient implements BackgroundResource {
     return getRealmCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   GetRealmRequest request = GetRealmRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Realm&gt; future = realmsServiceClient.getRealmCallable().futureCall(request);
-   *   // Do something
-   *   Realm response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetRealmRequest, Realm> getRealmCallable() {
     return stub.getRealmCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new realm in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Realm realm = Realm.newBuilder().build();
-   *   String realmId = "";
-   *   Realm response = realmsServiceClient.createRealmAsync(parent, realm, realmId).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
-   * @param realmId Required. The ID of the realm resource to be created.
+   * @param realm_id Required. The ID of the realm resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, OperationMetadata> createRealmAsync(
       LocationName parent, Realm realm, String realmId) {
     CreateRealmRequest request =
         CreateRealmRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
+            .setParent(Objects.isNull(parent) ? null : parent.toString())
             .setRealm(realm)
             .setRealmId(realmId)
             .build();
     return createRealmAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new realm in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   Realm realm = Realm.newBuilder().build();
-   *   String realmId = "";
-   *   Realm response = realmsServiceClient.createRealmAsync(parent.toString(), realm, realmId).get();
-   * }
-   * </code></pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
-   * @param realmId Required. The ID of the realm resource to be created.
+   * @param realm_id Required. The ID of the realm resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, OperationMetadata> createRealmAsync(
       String parent, Realm realm, String realmId) {
     CreateRealmRequest request =
@@ -460,235 +310,113 @@ public class RealmsServiceClient implements BackgroundResource {
     return createRealmAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new realm in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String realmId = "";
-   *   Realm realm = Realm.newBuilder().build();
-   *   CreateRealmRequest request = CreateRealmRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRealmId(realmId)
-   *     .setRealm(realm)
-   *     .build();
-   *   Realm response = realmsServiceClient.createRealmAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, OperationMetadata> createRealmAsync(
       CreateRealmRequest request) {
     return createRealmOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new realm in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String realmId = "";
-   *   Realm realm = Realm.newBuilder().build();
-   *   CreateRealmRequest request = CreateRealmRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRealmId(realmId)
-   *     .setRealm(realm)
-   *     .build();
-   *   OperationFuture&lt;Realm, OperationMetadata&gt; future = realmsServiceClient.createRealmOperationCallable().futureCall(request);
-   *   // Do something
-   *   Realm response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<CreateRealmRequest, Realm, OperationMetadata>
       createRealmOperationCallable() {
     return stub.createRealmOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new realm in a given project and location.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   String realmId = "";
-   *   Realm realm = Realm.newBuilder().build();
-   *   CreateRealmRequest request = CreateRealmRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setRealmId(realmId)
-   *     .setRealm(realm)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = realmsServiceClient.createRealmCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateRealmRequest, Operation> createRealmCallable() {
     return stub.createRealmCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   realmsServiceClient.deleteRealmAsync(name).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the realm to delete. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteRealmAsync(RealmName name) {
     DeleteRealmRequest request =
-        DeleteRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+        DeleteRealmRequest.newBuilder()
+            .setName(Objects.isNull(name) ? null : name.toString())
+            .build();
     return deleteRealmAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   realmsServiceClient.deleteRealmAsync(name.toString()).get();
-   * }
-   * </code></pre>
    *
    * @param name Required. The name of the realm to delete. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteRealmAsync(String name) {
     DeleteRealmRequest request = DeleteRealmRequest.newBuilder().setName(name).build();
     return deleteRealmAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   DeleteRealmRequest request = DeleteRealmRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   realmsServiceClient.deleteRealmAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Empty, OperationMetadata> deleteRealmAsync(
       DeleteRealmRequest request) {
     return deleteRealmOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   DeleteRealmRequest request = DeleteRealmRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   OperationFuture&lt;Empty, OperationMetadata&gt; future = realmsServiceClient.deleteRealmOperationCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<DeleteRealmRequest, Empty, OperationMetadata>
       deleteRealmOperationCallable() {
     return stub.deleteRealmOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
-   *   DeleteRealmRequest request = DeleteRealmRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = realmsServiceClient.deleteRealmCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteRealmRequest, Operation> deleteRealmCallable() {
     return stub.deleteRealmCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a single realm.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Realm response = realmsServiceClient.updateRealmAsync(realm, updateMask).get();
-   * }
-   * </code></pre>
-   *
    * @param realm Required. The realm to be updated. Only fields specified in update_mask are
    *     updated.
-   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   * @param update_mask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see
    *     <p>https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, OperationMetadata> updateRealmAsync(
       Realm realm, FieldMask updateMask) {
     UpdateRealmRequest request =
@@ -696,101 +424,42 @@ public class RealmsServiceClient implements BackgroundResource {
     return updateRealmAsync(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateRealmRequest request = UpdateRealmRequest.newBuilder()
-   *     .setRealm(realm)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   Realm response = realmsServiceClient.updateRealmAsync(request).get();
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Realm, OperationMetadata> updateRealmAsync(
       UpdateRealmRequest request) {
     return updateRealmOperationCallable().futureCall(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateRealmRequest request = UpdateRealmRequest.newBuilder()
-   *     .setRealm(realm)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   OperationFuture&lt;Realm, OperationMetadata&gt; future = realmsServiceClient.updateRealmOperationCallable().futureCall(request);
-   *   // Do something
-   *   Realm response = future.get();
-   * }
-   * </code></pre>
    */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public final OperationCallable<UpdateRealmRequest, Realm, OperationMetadata>
       updateRealmOperationCallable() {
     return stub.updateRealmOperationCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   UpdateRealmRequest request = UpdateRealmRequest.newBuilder()
-   *     .setRealm(realm)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;Operation&gt; future = realmsServiceClient.updateRealmCallable().futureCall(request);
-   *   // Do something
-   *   Operation response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     return stub.updateRealmCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Previews patches to a single realm.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder()
-   *     .setRealm(realm)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   PreviewRealmUpdateResponse response = realmsServiceClient.previewRealmUpdate(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -799,25 +468,11 @@ public class RealmsServiceClient implements BackgroundResource {
     return previewRealmUpdateCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Previews patches to a single realm.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
-   *   Realm realm = Realm.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   PreviewRealmUpdateRequest request = PreviewRealmUpdateRequest.newBuilder()
-   *     .setRealm(realm)
-   *     .setUpdateMask(updateMask)
-   *     .build();
-   *   ApiFuture&lt;PreviewRealmUpdateResponse&gt; future = realmsServiceClient.previewRealmUpdateCallable().futureCall(request);
-   *   // Do something
-   *   PreviewRealmUpdateResponse response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
       previewRealmUpdateCallable() {
