@@ -36,7 +36,6 @@ import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -175,7 +174,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
       GameServerDeploymentName parent) {
     ListGameServerConfigsRequest request =
         ListGameServerConfigsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listGameServerConfigs(request);
   }
@@ -239,7 +238,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
   public final GameServerConfig getGameServerConfig(GameServerConfigName name) {
     GetGameServerConfigRequest request =
         GetGameServerConfigRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getGameServerConfig(request);
   }
@@ -295,7 +294,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
       GameServerDeploymentName parent, GameServerConfig gameServerConfig) {
     CreateGameServerConfigRequest request =
         CreateGameServerConfigRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setGameServerConfig(gameServerConfig)
             .build();
     return createGameServerConfigAsync(request);
@@ -375,7 +374,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
       GameServerConfigName name) {
     DeleteGameServerConfigRequest request =
         DeleteGameServerConfigRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteGameServerConfigAsync(request);
   }

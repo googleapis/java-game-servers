@@ -59,7 +59,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -156,7 +155,7 @@ public class GameServerConfigsServiceStubSettings
             @Override
             public Iterable<GameServerConfig> extractResources(
                 ListGameServerConfigsResponse payload) {
-              return Objects.isNull(payload.getGameServerConfigsList())
+              return payload.getGameServerConfigsList() == null
                   ? ImmutableList.<GameServerConfig>of()
                   : payload.getGameServerConfigsList();
             }
