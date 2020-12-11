@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -179,7 +178,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
       LocationName parent) {
     ListGameServerDeploymentsRequest request =
         ListGameServerDeploymentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listGameServerDeployments(request);
   }
@@ -244,7 +243,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   public final GameServerDeployment getGameServerDeployment(GameServerDeploymentName name) {
     GetGameServerDeploymentRequest request =
         GetGameServerDeploymentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getGameServerDeployment(request);
   }
@@ -300,7 +299,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
           LocationName parent, GameServerDeployment gameServerDeployment) {
     CreateGameServerDeploymentRequest request =
         CreateGameServerDeploymentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setGameServerDeployment(gameServerDeployment)
             .build();
     return createGameServerDeploymentAsync(request);
@@ -372,7 +371,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
       GameServerDeploymentName name) {
     DeleteGameServerDeploymentRequest request =
         DeleteGameServerDeploymentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteGameServerDeploymentAsync(request);
   }
@@ -496,7 +495,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
       GameServerDeploymentName name) {
     GetGameServerDeploymentRolloutRequest request =
         GetGameServerDeploymentRolloutRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getGameServerDeploymentRollout(request);
   }

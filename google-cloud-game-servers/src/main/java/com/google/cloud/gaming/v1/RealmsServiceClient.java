@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -170,9 +169,7 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final ListRealmsPagedResponse listRealms(LocationName parent) {
     ListRealmsRequest request =
-        ListRealmsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListRealmsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRealms(request);
   }
 
@@ -230,7 +227,7 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final Realm getRealm(RealmName name) {
     GetRealmRequest request =
-        GetRealmRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRealm(request);
   }
 
@@ -282,7 +279,7 @@ public class RealmsServiceClient implements BackgroundResource {
       LocationName parent, Realm realm, String realmId) {
     CreateRealmRequest request =
         CreateRealmRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setRealm(realm)
             .setRealmId(realmId)
             .build();
@@ -353,9 +350,7 @@ public class RealmsServiceClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRealmAsync(RealmName name) {
     DeleteRealmRequest request =
-        DeleteRealmRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteRealmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRealmAsync(request);
   }
 

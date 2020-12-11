@@ -122,7 +122,7 @@ public class GameServerConfigName implements ResourceName {
   public static List<String> toStringList(List<GameServerConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GameServerConfigName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -137,20 +137,20 @@ public class GameServerConfigName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(deployment)) {
+          if (deployment != null) {
             fieldMapBuilder.put("deployment", deployment);
           }
-          if (!Objects.isNull(config)) {
+          if (config != null) {
             fieldMapBuilder.put("config", config);
           }
           fieldValuesMap = fieldMapBuilder.build();
