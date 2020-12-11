@@ -22,7 +22,14 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * The game server cluster maps to Kubernetes clusters running Agones and is
+ * used to manage fleets within clusters.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/gaming/v1/game_server_clusters_service.proto")
@@ -494,11 +501,24 @@ public final class GameServerClustersServiceGrpc {
     return GameServerClustersServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The game server cluster maps to Kubernetes clusters running Agones and is
+   * used to manage fleets within clusters.
+   * </pre>
+   */
   public abstract static class GameServerClustersServiceImplBase
       implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists game server clusters in a given project and location.
+     * </pre>
+     */
     public void listGameServerClusters(
         com.google.cloud.gaming.v1.ListGameServerClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerClustersResponse>
@@ -506,7 +526,13 @@ public final class GameServerClustersServiceGrpc {
       asyncUnimplementedUnaryCall(getListGameServerClustersMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single game server cluster.
+     * </pre>
+     */
     public void getGameServerCluster(
         com.google.cloud.gaming.v1.GetGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerCluster>
@@ -514,14 +540,27 @@ public final class GameServerClustersServiceGrpc {
       asyncUnimplementedUnaryCall(getGetGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new game server cluster in a given project and location.
+     * </pre>
+     */
     public void createGameServerCluster(
         com.google.cloud.gaming.v1.CreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews creation of a new game server cluster in a given project and
+     * location.
+     * </pre>
+     */
     public void previewCreateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -530,14 +569,26 @@ public final class GameServerClustersServiceGrpc {
       asyncUnimplementedUnaryCall(getPreviewCreateGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single game server cluster.
+     * </pre>
+     */
     public void deleteGameServerCluster(
         com.google.cloud.gaming.v1.DeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews deletion of a single game server cluster.
+     * </pre>
+     */
     public void previewDeleteGameServerCluster(
         com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -546,14 +597,26 @@ public final class GameServerClustersServiceGrpc {
       asyncUnimplementedUnaryCall(getPreviewDeleteGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server cluster.
+     * </pre>
+     */
     public void updateGameServerCluster(
         com.google.cloud.gaming.v1.UpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateGameServerClusterMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews updating a GameServerCluster.
+     * </pre>
+     */
     public void previewUpdateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -622,7 +685,14 @@ public final class GameServerClustersServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The game server cluster maps to Kubernetes clusters running Agones and is
+   * used to manage fleets within clusters.
+   * </pre>
+   */
   public static final class GameServerClustersServiceStub
       extends io.grpc.stub.AbstractAsyncStub<GameServerClustersServiceStub> {
     private GameServerClustersServiceStub(
@@ -636,7 +706,13 @@ public final class GameServerClustersServiceGrpc {
       return new GameServerClustersServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists game server clusters in a given project and location.
+     * </pre>
+     */
     public void listGameServerClusters(
         com.google.cloud.gaming.v1.ListGameServerClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerClustersResponse>
@@ -647,7 +723,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single game server cluster.
+     * </pre>
+     */
     public void getGameServerCluster(
         com.google.cloud.gaming.v1.GetGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerCluster>
@@ -658,7 +740,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new game server cluster in a given project and location.
+     * </pre>
+     */
     public void createGameServerCluster(
         com.google.cloud.gaming.v1.CreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -668,7 +756,14 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews creation of a new game server cluster in a given project and
+     * location.
+     * </pre>
+     */
     public void previewCreateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -680,7 +775,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single game server cluster.
+     * </pre>
+     */
     public void deleteGameServerCluster(
         com.google.cloud.gaming.v1.DeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -690,7 +791,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews deletion of a single game server cluster.
+     * </pre>
+     */
     public void previewDeleteGameServerCluster(
         com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -702,7 +809,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server cluster.
+     * </pre>
+     */
     public void updateGameServerCluster(
         com.google.cloud.gaming.v1.UpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -712,7 +825,13 @@ public final class GameServerClustersServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews updating a GameServerCluster.
+     * </pre>
+     */
     public void previewUpdateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
@@ -725,7 +844,14 @@ public final class GameServerClustersServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The game server cluster maps to Kubernetes clusters running Agones and is
+   * used to manage fleets within clusters.
+   * </pre>
+   */
   public static final class GameServerClustersServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<GameServerClustersServiceBlockingStub> {
     private GameServerClustersServiceBlockingStub(
@@ -739,28 +865,53 @@ public final class GameServerClustersServiceGrpc {
       return new GameServerClustersServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists game server clusters in a given project and location.
+     * </pre>
+     */
     public com.google.cloud.gaming.v1.ListGameServerClustersResponse listGameServerClusters(
         com.google.cloud.gaming.v1.ListGameServerClustersRequest request) {
       return blockingUnaryCall(
           getChannel(), getListGameServerClustersMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single game server cluster.
+     * </pre>
+     */
     public com.google.cloud.gaming.v1.GameServerCluster getGameServerCluster(
         com.google.cloud.gaming.v1.GetGameServerClusterRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new game server cluster in a given project and location.
+     * </pre>
+     */
     public com.google.longrunning.Operation createGameServerCluster(
         com.google.cloud.gaming.v1.CreateGameServerClusterRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews creation of a new game server cluster in a given project and
+     * location.
+     * </pre>
+     */
     public com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse
         previewCreateGameServerCluster(
             com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest request) {
@@ -768,14 +919,26 @@ public final class GameServerClustersServiceGrpc {
           getChannel(), getPreviewCreateGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single game server cluster.
+     * </pre>
+     */
     public com.google.longrunning.Operation deleteGameServerCluster(
         com.google.cloud.gaming.v1.DeleteGameServerClusterRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews deletion of a single game server cluster.
+     * </pre>
+     */
     public com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterResponse
         previewDeleteGameServerCluster(
             com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest request) {
@@ -783,14 +946,26 @@ public final class GameServerClustersServiceGrpc {
           getChannel(), getPreviewDeleteGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server cluster.
+     * </pre>
+     */
     public com.google.longrunning.Operation updateGameServerCluster(
         com.google.cloud.gaming.v1.UpdateGameServerClusterRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateGameServerClusterMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews updating a GameServerCluster.
+     * </pre>
+     */
     public com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterResponse
         previewUpdateGameServerCluster(
             com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest request) {
@@ -799,7 +974,14 @@ public final class GameServerClustersServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The game server cluster maps to Kubernetes clusters running Agones and is
+   * used to manage fleets within clusters.
+   * </pre>
+   */
   public static final class GameServerClustersServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<GameServerClustersServiceFutureStub> {
     private GameServerClustersServiceFutureStub(
@@ -813,7 +995,13 @@ public final class GameServerClustersServiceGrpc {
       return new GameServerClustersServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists game server clusters in a given project and location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListGameServerClustersResponse>
         listGameServerClusters(com.google.cloud.gaming.v1.ListGameServerClustersRequest request) {
@@ -821,7 +1009,13 @@ public final class GameServerClustersServiceGrpc {
           getChannel().newCall(getListGameServerClustersMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single game server cluster.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerCluster>
         getGameServerCluster(com.google.cloud.gaming.v1.GetGameServerClusterRequest request) {
@@ -829,14 +1023,27 @@ public final class GameServerClustersServiceGrpc {
           getChannel().newCall(getGetGameServerClusterMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new game server cluster in a given project and location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerCluster(com.google.cloud.gaming.v1.CreateGameServerClusterRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateGameServerClusterMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews creation of a new game server cluster in a given project and
+     * location.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse>
         previewCreateGameServerCluster(
@@ -846,14 +1053,26 @@ public final class GameServerClustersServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single game server cluster.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerCluster(com.google.cloud.gaming.v1.DeleteGameServerClusterRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteGameServerClusterMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews deletion of a single game server cluster.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterResponse>
         previewDeleteGameServerCluster(
@@ -863,14 +1082,26 @@ public final class GameServerClustersServiceGrpc {
           request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Patches a single game server cluster.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateGameServerCluster(com.google.cloud.gaming.v1.UpdateGameServerClusterRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateGameServerClusterMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Previews updating a GameServerCluster.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterResponse>
         previewUpdateGameServerCluster(
