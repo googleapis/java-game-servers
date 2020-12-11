@@ -182,7 +182,7 @@ public class RealmsServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
             .build();
@@ -226,7 +226,7 @@ public class RealmsServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
             .build();
@@ -270,7 +270,7 @@ public class RealmsServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
             .build();
@@ -284,7 +284,7 @@ public class RealmsServiceClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Realm realm = Realm.newBuilder().build();
-    String realmId = "realm_id-859416373";
+    String realmId = "realmId1080654858";
 
     Realm actualResponse = client.createRealmAsync(parent, realm, realmId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -310,7 +310,7 @@ public class RealmsServiceClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Realm realm = Realm.newBuilder().build();
-      String realmId = "realm_id-859416373";
+      String realmId = "realmId1080654858";
       client.createRealmAsync(parent, realm, realmId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -328,7 +328,7 @@ public class RealmsServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
             .build();
@@ -342,7 +342,7 @@ public class RealmsServiceClientTest {
 
     String parent = "parent-995424086";
     Realm realm = Realm.newBuilder().build();
-    String realmId = "realm_id-859416373";
+    String realmId = "realmId1080654858";
 
     Realm actualResponse = client.createRealmAsync(parent, realm, realmId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -368,7 +368,7 @@ public class RealmsServiceClientTest {
     try {
       String parent = "parent-995424086";
       Realm realm = Realm.newBuilder().build();
-      String realmId = "realm_id-859416373";
+      String realmId = "realmId1080654858";
       client.createRealmAsync(parent, realm, realmId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -470,7 +470,7 @@ public class RealmsServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setTimeZone("time_zone36848094")
+            .setTimeZone("timeZone-2077180903")
             .setEtag("etag3123477")
             .setDescription("description-1724546052")
             .build();
