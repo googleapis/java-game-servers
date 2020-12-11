@@ -286,9 +286,8 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm-id}`.
-   * @param game_server_cluster Required. The game server cluster resource to be created.
-   * @param game_server_cluster_id Required. The ID of the game server cluster resource to be
-   *     created.
+   * @param gameServerCluster Required. The game server cluster resource to be created.
+   * @param gameServerClusterId Required. The ID of the game server cluster resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerCluster, OperationMetadata> createGameServerClusterAsync(
@@ -308,9 +307,8 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}/realms/{realm-id}`.
-   * @param game_server_cluster Required. The game server cluster resource to be created.
-   * @param game_server_cluster_id Required. The ID of the game server cluster resource to be
-   *     created.
+   * @param gameServerCluster Required. The game server cluster resource to be created.
+   * @param gameServerClusterId Required. The ID of the game server cluster resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerCluster, OperationMetadata> createGameServerClusterAsync(
@@ -476,9 +474,9 @@ public class GameServerClustersServiceClient implements BackgroundResource {
   /**
    * Patches a single game server cluster.
    *
-   * @param game_server_cluster Required. The game server cluster to be updated. Only fields
-   *     specified in update_mask are updated.
-   * @param update_mask Required. Mask of fields to update. At least one path must be supplied in
+   * @param gameServerCluster Required. The game server cluster to be updated. Only fields specified
+   *     in update_mask are updated.
+   * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
    *     <p>https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask

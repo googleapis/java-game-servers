@@ -291,7 +291,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
-   * @param game_server_deployment Required. The game server delpoyment resource to be created.
+   * @param gameServerDeployment Required. The game server delpoyment resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerDeployment, OperationMetadata>
@@ -311,7 +311,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
-   * @param game_server_deployment Required. The game server delpoyment resource to be created.
+   * @param gameServerDeployment Required. The game server delpoyment resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerDeployment, OperationMetadata>
@@ -429,9 +429,9 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Patches a game server deployment.
    *
-   * @param game_server_deployment Required. The game server delpoyment to be updated. Only fields
+   * @param gameServerDeployment Required. The game server delpoyment to be updated. Only fields
    *     specified in update_mask are updated.
-   * @param update_mask Required. Mask of fields to update. At least one path must be supplied in
+   * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
    *     <p>https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask
@@ -547,7 +547,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *
    * @param rollout Required. The game server delpoyment rollout to be updated. Only fields
    *     specified in update_mask are updated.
-   * @param update_mask Required. Mask of fields to update. At least one path must be supplied in
+   * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. For the `FieldMask` definition, see
    *     <p>https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask

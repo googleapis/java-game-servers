@@ -216,12 +216,22 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
         GameServerClustersServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcGameServerClustersServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcGameServerClustersServiceStub(
       GameServerClustersServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcGameServerClustersServiceCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcGameServerClustersServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
   protected GrpcGameServerClustersServiceStub(
       GameServerClustersServiceStubSettings settings,
       ClientContext clientContext,
