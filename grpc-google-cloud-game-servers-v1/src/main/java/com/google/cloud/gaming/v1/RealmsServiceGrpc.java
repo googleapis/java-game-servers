@@ -22,14 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * A realm is a grouping of game server clusters that are considered
- * interchangeable.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/gaming/v1/realms_service.proto")
@@ -336,23 +329,10 @@ public final class RealmsServiceGrpc {
     return RealmsServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A realm is a grouping of game server clusters that are considered
-   * interchangeable.
-   * </pre>
-   */
+  /** */
   public abstract static class RealmsServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists realms in a given project and location.
-     * </pre>
-     */
+    /** */
     public void listRealms(
         com.google.cloud.gaming.v1.ListRealmsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListRealmsResponse>
@@ -360,65 +340,35 @@ public final class RealmsServiceGrpc {
       asyncUnimplementedUnaryCall(getListRealmsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single realm.
-     * </pre>
-     */
+    /** */
     public void getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.Realm> responseObserver) {
       asyncUnimplementedUnaryCall(getGetRealmMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new realm in a given project and location.
-     * </pre>
-     */
+    /** */
     public void createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateRealmMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single realm.
-     * </pre>
-     */
+    /** */
     public void deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteRealmMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single realm.
-     * </pre>
-     */
+    /** */
     public void updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateRealmMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews patches to a single realm.
-     * </pre>
-     */
+    /** */
     public void previewRealmUpdate(
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
@@ -470,14 +420,7 @@ public final class RealmsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A realm is a grouping of game server clusters that are considered
-   * interchangeable.
-   * </pre>
-   */
+  /** */
   public static final class RealmsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<RealmsServiceStub> {
     private RealmsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -489,13 +432,7 @@ public final class RealmsServiceGrpc {
       return new RealmsServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists realms in a given project and location.
-     * </pre>
-     */
+    /** */
     public void listRealms(
         com.google.cloud.gaming.v1.ListRealmsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListRealmsResponse>
@@ -504,13 +441,7 @@ public final class RealmsServiceGrpc {
           getChannel().newCall(getListRealmsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single realm.
-     * </pre>
-     */
+    /** */
     public void getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.Realm> responseObserver) {
@@ -518,13 +449,7 @@ public final class RealmsServiceGrpc {
           getChannel().newCall(getGetRealmMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new realm in a given project and location.
-     * </pre>
-     */
+    /** */
     public void createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -534,13 +459,7 @@ public final class RealmsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single realm.
-     * </pre>
-     */
+    /** */
     public void deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -550,13 +469,7 @@ public final class RealmsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single realm.
-     * </pre>
-     */
+    /** */
     public void updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -566,13 +479,7 @@ public final class RealmsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews patches to a single realm.
-     * </pre>
-     */
+    /** */
     public void previewRealmUpdate(
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
@@ -584,14 +491,7 @@ public final class RealmsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A realm is a grouping of game server clusters that are considered
-   * interchangeable.
-   * </pre>
-   */
+  /** */
   public static final class RealmsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<RealmsServiceBlockingStub> {
     private RealmsServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -604,73 +504,37 @@ public final class RealmsServiceGrpc {
       return new RealmsServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists realms in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.ListRealmsResponse listRealms(
         com.google.cloud.gaming.v1.ListRealmsRequest request) {
       return blockingUnaryCall(getChannel(), getListRealmsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.Realm getRealm(
         com.google.cloud.gaming.v1.GetRealmRequest request) {
       return blockingUnaryCall(getChannel(), getGetRealmMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new realm in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation createRealm(
         com.google.cloud.gaming.v1.CreateRealmRequest request) {
       return blockingUnaryCall(getChannel(), getCreateRealmMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation deleteRealm(
         com.google.cloud.gaming.v1.DeleteRealmRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteRealmMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation updateRealm(
         com.google.cloud.gaming.v1.UpdateRealmRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateRealmMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews patches to a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.PreviewRealmUpdateResponse previewRealmUpdate(
         com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request) {
       return blockingUnaryCall(
@@ -678,14 +542,7 @@ public final class RealmsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * A realm is a grouping of game server clusters that are considered
-   * interchangeable.
-   * </pre>
-   */
+  /** */
   public static final class RealmsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<RealmsServiceFutureStub> {
     private RealmsServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -698,13 +555,7 @@ public final class RealmsServiceGrpc {
       return new RealmsServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists realms in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListRealmsResponse>
         listRealms(com.google.cloud.gaming.v1.ListRealmsRequest request) {
@@ -712,64 +563,34 @@ public final class RealmsServiceGrpc {
           getChannel().newCall(getListRealmsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.gaming.v1.Realm>
         getRealm(com.google.cloud.gaming.v1.GetRealmRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetRealmMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new realm in a given project and location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createRealm(com.google.cloud.gaming.v1.CreateRealmRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateRealmMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteRealm(com.google.cloud.gaming.v1.DeleteRealmRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteRealmMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Patches a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateRealm(com.google.cloud.gaming.v1.UpdateRealmRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateRealmMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Previews patches to a single realm.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.PreviewRealmUpdateResponse>
         previewRealmUpdate(com.google.cloud.gaming.v1.PreviewRealmUpdateRequest request) {

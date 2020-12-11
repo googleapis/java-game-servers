@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * The game server config configures the game servers in an Agones fleet.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/gaming/v1/game_server_configs_service.proto")
@@ -288,23 +282,10 @@ public final class GameServerConfigsServiceGrpc {
     return GameServerConfigsServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server config configures the game servers in an Agones fleet.
-   * </pre>
-   */
+  /** */
   public abstract static class GameServerConfigsServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server configs in a given project, location, and game server
-     * deployment.
-     * </pre>
-     */
+    /** */
     public void listGameServerConfigs(
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
@@ -312,42 +293,21 @@ public final class GameServerConfigsServiceGrpc {
       asyncUnimplementedUnaryCall(getListGameServerConfigsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server config.
-     * </pre>
-     */
+    /** */
     public void getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerConfig> responseObserver) {
       asyncUnimplementedUnaryCall(getGetGameServerConfigMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server config in a given project, location, and game
-     * server deployment. Game server configs are immutable, and are not applied
-     * until referenced in the game server deployment rollout resource.
-     * </pre>
-     */
+    /** */
     public void createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateGameServerConfigMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server config. The deletion will fail if the game
-     * server config is referenced in a game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public void deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -387,13 +347,7 @@ public final class GameServerConfigsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server config configures the game servers in an Agones fleet.
-   * </pre>
-   */
+  /** */
   public static final class GameServerConfigsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<GameServerConfigsServiceStub> {
     private GameServerConfigsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -406,14 +360,7 @@ public final class GameServerConfigsServiceGrpc {
       return new GameServerConfigsServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server configs in a given project, location, and game server
-     * deployment.
-     * </pre>
-     */
+    /** */
     public void listGameServerConfigs(
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
@@ -424,13 +371,7 @@ public final class GameServerConfigsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server config.
-     * </pre>
-     */
+    /** */
     public void getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerConfig> responseObserver) {
@@ -440,15 +381,7 @@ public final class GameServerConfigsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server config in a given project, location, and game
-     * server deployment. Game server configs are immutable, and are not applied
-     * until referenced in the game server deployment rollout resource.
-     * </pre>
-     */
+    /** */
     public void createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -458,14 +391,7 @@ public final class GameServerConfigsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server config. The deletion will fail if the game
-     * server config is referenced in a game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public void deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -476,13 +402,7 @@ public final class GameServerConfigsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server config configures the game servers in an Agones fleet.
-   * </pre>
-   */
+  /** */
   public static final class GameServerConfigsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<GameServerConfigsServiceBlockingStub> {
     private GameServerConfigsServiceBlockingStub(
@@ -496,56 +416,28 @@ public final class GameServerConfigsServiceGrpc {
       return new GameServerConfigsServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server configs in a given project, location, and game server
-     * deployment.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.ListGameServerConfigsResponse listGameServerConfigs(
         com.google.cloud.gaming.v1.ListGameServerConfigsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListGameServerConfigsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server config.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.gaming.v1.GameServerConfig getGameServerConfig(
         com.google.cloud.gaming.v1.GetGameServerConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetGameServerConfigMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server config in a given project, location, and game
-     * server deployment. Game server configs are immutable, and are not applied
-     * until referenced in the game server deployment rollout resource.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation createGameServerConfig(
         com.google.cloud.gaming.v1.CreateGameServerConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateGameServerConfigMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server config. The deletion will fail if the game
-     * server config is referenced in a game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation deleteGameServerConfig(
         com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request) {
       return blockingUnaryCall(
@@ -553,13 +445,7 @@ public final class GameServerConfigsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * The game server config configures the game servers in an Agones fleet.
-   * </pre>
-   */
+  /** */
   public static final class GameServerConfigsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<GameServerConfigsServiceFutureStub> {
     private GameServerConfigsServiceFutureStub(
@@ -573,14 +459,7 @@ public final class GameServerConfigsServiceGrpc {
       return new GameServerConfigsServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists game server configs in a given project, location, and game server
-     * deployment.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.ListGameServerConfigsResponse>
         listGameServerConfigs(com.google.cloud.gaming.v1.ListGameServerConfigsRequest request) {
@@ -588,13 +467,7 @@ public final class GameServerConfigsServiceGrpc {
           getChannel().newCall(getListGameServerConfigsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets details of a single game server config.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gaming.v1.GameServerConfig>
         getGameServerConfig(com.google.cloud.gaming.v1.GetGameServerConfigRequest request) {
@@ -602,29 +475,14 @@ public final class GameServerConfigsServiceGrpc {
           getChannel().newCall(getGetGameServerConfigMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new game server config in a given project, location, and game
-     * server deployment. Game server configs are immutable, and are not applied
-     * until referenced in the game server deployment rollout resource.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createGameServerConfig(com.google.cloud.gaming.v1.CreateGameServerConfigRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateGameServerConfigMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single game server config. The deletion will fail if the game
-     * server config is referenced in a game server deployment rollout.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteGameServerConfig(com.google.cloud.gaming.v1.DeleteGameServerConfigRequest request) {
       return futureUnaryCall(
