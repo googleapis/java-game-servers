@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.gaming.v1.stub;
 
 import static com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient.ListGameServerDeploymentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -52,16 +52,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Game Services API.
+ * gRPC stub implementation for the GameServerDeploymentsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsServiceStub {
-
   private static final MethodDescriptor<
           ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
       listGameServerDeploymentsMethodDescriptor =
@@ -75,6 +73,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGameServerDeploymentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGameServerDeploymentRequest, GameServerDeployment>
       getGameServerDeploymentMethodDescriptor =
           MethodDescriptor.<GetGameServerDeploymentRequest, GameServerDeployment>newBuilder()
@@ -86,6 +85,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GameServerDeployment.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateGameServerDeploymentRequest, Operation>
       createGameServerDeploymentMethodDescriptor =
           MethodDescriptor.<CreateGameServerDeploymentRequest, Operation>newBuilder()
@@ -96,6 +96,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                   ProtoUtils.marshaller(CreateGameServerDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteGameServerDeploymentRequest, Operation>
       deleteGameServerDeploymentMethodDescriptor =
           MethodDescriptor.<DeleteGameServerDeploymentRequest, Operation>newBuilder()
@@ -106,6 +107,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                   ProtoUtils.marshaller(DeleteGameServerDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateGameServerDeploymentRequest, Operation>
       updateGameServerDeploymentMethodDescriptor =
           MethodDescriptor.<UpdateGameServerDeploymentRequest, Operation>newBuilder()
@@ -116,6 +118,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                   ProtoUtils.marshaller(UpdateGameServerDeploymentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
       getGameServerDeploymentRolloutMethodDescriptor =
@@ -129,6 +132,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GameServerDeploymentRollout.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateGameServerDeploymentRolloutRequest, Operation>
       updateGameServerDeploymentRolloutMethodDescriptor =
           MethodDescriptor.<UpdateGameServerDeploymentRolloutRequest, Operation>newBuilder()
@@ -140,6 +144,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                       UpdateGameServerDeploymentRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
       previewGameServerDeploymentRolloutMethodDescriptor =
@@ -157,6 +162,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
                   ProtoUtils.marshaller(
                       PreviewGameServerDeploymentRolloutResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
       fetchDeploymentStateMethodDescriptor =
           MethodDescriptor.<FetchDeploymentStateRequest, FetchDeploymentStateResponse>newBuilder()
@@ -168,9 +174,6 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchDeploymentStateResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
       listGameServerDeploymentsCallable;
@@ -206,6 +209,8 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
   private final UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
       fetchDeploymentStateCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGameServerDeploymentsServiceStub create(
@@ -227,22 +232,12 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
         callableFactory);
   }
 
-  /**
-   * Constructs an instance of GrpcGameServerDeploymentsServiceStub, using the given settings. This
-   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcGameServerDeploymentsServiceStub(
       GameServerDeploymentsServiceStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcGameServerDeploymentsServiceCallableFactory());
   }
 
-  /**
-   * Constructs an instance of GrpcGameServerDeploymentsServiceStub, using the given settings. This
-   * is protected so that it is easy to make a subclass, but otherwise, the static factory methods
-   * should be preferred.
-   */
   protected GrpcGameServerDeploymentsServiceStub(
       GameServerDeploymentsServiceStubSettings settings,
       ClientContext clientContext,
@@ -417,7 +412,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             createGameServerDeploymentTransportSettings,
             settings.createGameServerDeploymentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteGameServerDeploymentCallable =
         callableFactory.createUnaryCallable(
             deleteGameServerDeploymentTransportSettings,
@@ -428,7 +423,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             deleteGameServerDeploymentTransportSettings,
             settings.deleteGameServerDeploymentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateGameServerDeploymentCallable =
         callableFactory.createUnaryCallable(
             updateGameServerDeploymentTransportSettings,
@@ -439,7 +434,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             updateGameServerDeploymentTransportSettings,
             settings.updateGameServerDeploymentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getGameServerDeploymentRolloutCallable =
         callableFactory.createUnaryCallable(
             getGameServerDeploymentRolloutTransportSettings,
@@ -455,7 +450,7 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             updateGameServerDeploymentRolloutTransportSettings,
             settings.updateGameServerDeploymentRolloutOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.previewGameServerDeploymentRolloutCallable =
         callableFactory.createUnaryCallable(
             previewGameServerDeploymentRolloutTransportSettings,
@@ -467,17 +462,12 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
             settings.fetchDeploymentStateSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsPagedResponse>
-      listGameServerDeploymentsPagedCallable() {
-    return listGameServerDeploymentsPagedCallable;
   }
 
   public UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
@@ -485,16 +475,14 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return listGameServerDeploymentsCallable;
   }
 
+  public UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsPagedResponse>
+      listGameServerDeploymentsPagedCallable() {
+    return listGameServerDeploymentsPagedCallable;
+  }
+
   public UnaryCallable<GetGameServerDeploymentRequest, GameServerDeployment>
       getGameServerDeploymentCallable() {
     return getGameServerDeploymentCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
-      createGameServerDeploymentOperationCallable() {
-    return createGameServerDeploymentOperationCallable;
   }
 
   public UnaryCallable<CreateGameServerDeploymentRequest, Operation>
@@ -502,10 +490,10 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return createGameServerDeploymentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
-      deleteGameServerDeploymentOperationCallable() {
-    return deleteGameServerDeploymentOperationCallable;
+  public OperationCallable<
+          CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
+      createGameServerDeploymentOperationCallable() {
+    return createGameServerDeploymentOperationCallable;
   }
 
   public UnaryCallable<DeleteGameServerDeploymentRequest, Operation>
@@ -513,11 +501,9 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return deleteGameServerDeploymentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<
-          UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
-      updateGameServerDeploymentOperationCallable() {
-    return updateGameServerDeploymentOperationCallable;
+  public OperationCallable<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
+      deleteGameServerDeploymentOperationCallable() {
+    return deleteGameServerDeploymentOperationCallable;
   }
 
   public UnaryCallable<UpdateGameServerDeploymentRequest, Operation>
@@ -525,21 +511,26 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return updateGameServerDeploymentCallable;
   }
 
+  public OperationCallable<
+          UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
+      updateGameServerDeploymentOperationCallable() {
+    return updateGameServerDeploymentOperationCallable;
+  }
+
   public UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
       getGameServerDeploymentRolloutCallable() {
     return getGameServerDeploymentRolloutCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
+      updateGameServerDeploymentRolloutCallable() {
+    return updateGameServerDeploymentRolloutCallable;
+  }
+
   public OperationCallable<
           UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentRolloutOperationCallable() {
     return updateGameServerDeploymentRolloutOperationCallable;
-  }
-
-  public UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
-      updateGameServerDeploymentRolloutCallable() {
-    return updateGameServerDeploymentRolloutCallable;
   }
 
   public UnaryCallable<
