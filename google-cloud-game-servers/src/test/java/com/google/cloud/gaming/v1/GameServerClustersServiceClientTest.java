@@ -297,7 +297,7 @@ public class GameServerClustersServiceClientTest {
 
     RealmName parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
     GameServerCluster gameServerCluster = GameServerCluster.newBuilder().build();
-    String gameServerClusterId = "game_server_cluster_id-858763025";
+    String gameServerClusterId = "gameServerClusterId-1301104032";
 
     GameServerCluster actualResponse =
         client.createGameServerClusterAsync(parent, gameServerCluster, gameServerClusterId).get();
@@ -325,7 +325,7 @@ public class GameServerClustersServiceClientTest {
     try {
       RealmName parent = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
       GameServerCluster gameServerCluster = GameServerCluster.newBuilder().build();
-      String gameServerClusterId = "game_server_cluster_id-858763025";
+      String gameServerClusterId = "gameServerClusterId-1301104032";
       client.createGameServerClusterAsync(parent, gameServerCluster, gameServerClusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -359,7 +359,7 @@ public class GameServerClustersServiceClientTest {
 
     String parent = "parent-995424086";
     GameServerCluster gameServerCluster = GameServerCluster.newBuilder().build();
-    String gameServerClusterId = "game_server_cluster_id-858763025";
+    String gameServerClusterId = "gameServerClusterId-1301104032";
 
     GameServerCluster actualResponse =
         client.createGameServerClusterAsync(parent, gameServerCluster, gameServerClusterId).get();
@@ -387,7 +387,7 @@ public class GameServerClustersServiceClientTest {
     try {
       String parent = "parent-995424086";
       GameServerCluster gameServerCluster = GameServerCluster.newBuilder().build();
-      String gameServerClusterId = "game_server_cluster_id-858763025";
+      String gameServerClusterId = "gameServerClusterId-1301104032";
       client.createGameServerClusterAsync(parent, gameServerCluster, gameServerClusterId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -411,7 +411,7 @@ public class GameServerClustersServiceClientTest {
             .setParent(
                 GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
                     .toString())
-            .setGameServerClusterId("game_server_cluster_id-858763025")
+            .setGameServerClusterId("gameServerClusterId-1301104032")
             .setGameServerCluster(GameServerCluster.newBuilder().build())
             .setPreviewTime(Timestamp.newBuilder().build())
             .build();
@@ -446,7 +446,7 @@ public class GameServerClustersServiceClientTest {
               .setParent(
                   GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]")
                       .toString())
-              .setGameServerClusterId("game_server_cluster_id-858763025")
+              .setGameServerClusterId("gameServerClusterId-1301104032")
               .setGameServerCluster(GameServerCluster.newBuilder().build())
               .setPreviewTime(Timestamp.newBuilder().build())
               .build();

@@ -538,7 +538,7 @@ public class GameServerDeploymentsServiceClientTest {
             .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
-            .setDefaultGameServerConfig("default_game_server_config-1758159633")
+            .setDefaultGameServerConfig("defaultGameServerConfig-1852465704")
             .addAllGameServerConfigOverrides(new ArrayList<GameServerConfigOverride>())
             .setEtag("etag3123477")
             .build();
@@ -584,7 +584,7 @@ public class GameServerDeploymentsServiceClientTest {
             .setName("name3373707")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
-            .setDefaultGameServerConfig("default_game_server_config-1758159633")
+            .setDefaultGameServerConfig("defaultGameServerConfig-1852465704")
             .addAllGameServerConfigOverrides(new ArrayList<GameServerConfigOverride>())
             .setEtag("etag3123477")
             .build();
