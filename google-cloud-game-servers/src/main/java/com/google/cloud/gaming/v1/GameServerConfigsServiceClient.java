@@ -287,7 +287,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
-   * @param game_server_config Required. The game server config resource to be created.
+   * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerConfig, OperationMetadata> createGameServerConfigAsync(
@@ -308,7 +308,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/`.
-   * @param game_server_config Required. The game server config resource to be created.
+   * @param gameServerConfig Required. The game server config resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GameServerConfig, OperationMetadata> createGameServerConfigAsync(

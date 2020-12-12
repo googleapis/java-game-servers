@@ -272,7 +272,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
-   * @param realm_id Required. The ID of the realm resource to be created.
+   * @param realmId Required. The ID of the realm resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Realm, OperationMetadata> createRealmAsync(
@@ -293,7 +293,7 @@ public class RealmsServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @param realm Required. The realm resource to be created.
-   * @param realm_id Required. The ID of the realm resource to be created.
+   * @param realmId Required. The ID of the realm resource to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Realm, OperationMetadata> createRealmAsync(
@@ -406,7 +406,7 @@ public class RealmsServiceClient implements BackgroundResource {
    *
    * @param realm Required. The realm to be updated. Only fields specified in update_mask are
    *     updated.
-   * @param update_mask Required. The update mask applies to the resource. For the `FieldMask`
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
    *     definition, see
    *     <p>https: //developers.google.com/protocol-buffers //
    *     /docs/reference/google.protobuf#fieldmask
