@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -176,7 +175,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
   public final ListGameServerClustersPagedResponse listGameServerClusters(RealmName parent) {
     ListGameServerClustersRequest request =
         ListGameServerClustersRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listGameServerClusters(request);
   }
@@ -240,7 +239,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
   public final GameServerCluster getGameServerCluster(GameServerClusterName name) {
     GetGameServerClusterRequest request =
         GetGameServerClusterRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getGameServerCluster(request);
   }
@@ -296,7 +295,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
       RealmName parent, GameServerCluster gameServerCluster, String gameServerClusterId) {
     CreateGameServerClusterRequest request =
         CreateGameServerClusterRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setGameServerCluster(gameServerCluster)
             .setGameServerClusterId(gameServerClusterId)
             .build();
@@ -396,7 +395,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
       GameServerClusterName name) {
     DeleteGameServerClusterRequest request =
         DeleteGameServerClusterRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return deleteGameServerClusterAsync(request);
   }
