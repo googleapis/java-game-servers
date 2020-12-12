@@ -535,7 +535,9 @@ public class GameServerDeploymentsServiceClientTest {
   public void getGameServerDeploymentRolloutTest() throws Exception {
     GameServerDeploymentRollout expectedResponse =
         GameServerDeploymentRollout.newBuilder()
-            .setName("name3373707")
+            .setName(
+                GameServerDeploymentRolloutName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDefaultGameServerConfig("defaultGameServerConfig-1852465704")
@@ -581,7 +583,9 @@ public class GameServerDeploymentsServiceClientTest {
   public void getGameServerDeploymentRolloutTest2() throws Exception {
     GameServerDeploymentRollout expectedResponse =
         GameServerDeploymentRollout.newBuilder()
-            .setName("name3373707")
+            .setName(
+                GameServerDeploymentRolloutName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]")
+                    .toString())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDefaultGameServerConfig("defaultGameServerConfig-1852465704")
