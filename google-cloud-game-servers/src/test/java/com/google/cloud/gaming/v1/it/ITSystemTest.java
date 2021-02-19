@@ -15,7 +15,9 @@
  */
 package com.google.cloud.gaming.v1.it;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.gaming.v1.CreateGameServerConfigRequest;
