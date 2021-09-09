@@ -39,18 +39,18 @@ public class ListClusters {
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
       ListGameServerClustersRequest request =
           ListGameServerClustersRequest.newBuilder()
-              .setParent(
-                  RealmName.of(projectId, regionId, realmId)
-                      .toString())
+              .setParent(RealmName.of(projectId, regionId, realmId).toString())
               .setView(GameServerClusterView.FULL)
               .build();
       ListGameServerClustersPagedResponse response = client.listGameServerClusters(request);
       for (GameServerCluster cluster : response.iterateAll()) {
         System.out.println("Game Server Cluster found: " + cluster.getName());
-        System.out.println("Cluster installed Agones version: " + cluster.getClusterState()
-            .getAgonesVersionInstalled());
-        System.out.println("Cluster installed Kubernetes version: " + cluster.getClusterState()
-            .getKubernetesVersionInstalled());
+        System.out.println(
+            "Cluster installed Agones version: "
+                + cluster.getClusterState().getAgonesVersionInstalled());
+        System.out.println(
+            "Cluster installed Kubernetes version: "
+                + cluster.getClusterState().getKubernetesVersionInstalled());
         System.out.println(
             "Cluster installation state: " + cluster.getClusterState().getInstallationState());
       }
@@ -58,18 +58,18 @@ public class ListClusters {
       while (!Strings.isNullOrEmpty(response.getNextPageToken())) {
         ListGameServerClustersRequest request2 =
             ListGameServerClustersRequest.newBuilder()
-                .setParent(
-                    RealmName.of(projectId, regionId, realmId)
-                        .toString())
+                .setParent(RealmName.of(projectId, regionId, realmId).toString())
                 .setPageToken(response.getNextPageToken())
                 .build();
         response = client.listGameServerClusters(request2);
         for (GameServerCluster cluster : response.iterateAll()) {
           System.out.println("Game Server Cluster found: " + cluster.getName());
-          System.out.println("Cluster installed Agones version: " + cluster.getClusterState()
-              .getAgonesVersionInstalled());
-          System.out.println("Cluster installed Kubernetes version: " + cluster.getClusterState()
-              .getKubernetesVersionInstalled());
+          System.out.println(
+              "Cluster installed Agones version: "
+                  + cluster.getClusterState().getAgonesVersionInstalled());
+          System.out.println(
+              "Cluster installed Kubernetes version: "
+                  + cluster.getClusterState().getKubernetesVersionInstalled());
           System.out.println(
               "Cluster installation state: " + cluster.getClusterState().getInstallationState());
         }

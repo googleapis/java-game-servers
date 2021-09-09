@@ -39,18 +39,18 @@ public class GetCluster {
     try (GameServerClustersServiceClient client = GameServerClustersServiceClient.create()) {
       GetGameServerClusterRequest request =
           GetGameServerClusterRequest.newBuilder()
-              .setName(
-                  GameServerClusterName.of(projectId, regionId, realmId, clusterId)
-                      .toString())
+              .setName(GameServerClusterName.of(projectId, regionId, realmId, clusterId).toString())
               .setView(GameServerClusterView.FULL)
               .build();
       GameServerCluster cluster = client.getGameServerCluster(request);
 
       System.out.println("Game Server Cluster found: " + cluster.getName());
-      System.out.println("Cluster installed Agones version: " + cluster.getClusterState()
-          .getAgonesVersionInstalled());
-      System.out.println("Cluster installed Kubernetes version: " + cluster.getClusterState()
-          .getKubernetesVersionInstalled());
+      System.out.println(
+          "Cluster installed Agones version: "
+              + cluster.getClusterState().getAgonesVersionInstalled());
+      System.out.println(
+          "Cluster installed Kubernetes version: "
+              + cluster.getClusterState().getKubernetesVersionInstalled());
       System.out.println(
           "Cluster installation state: " + cluster.getClusterState().getInstallationState());
     }
