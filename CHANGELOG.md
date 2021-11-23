@@ -1,5 +1,23 @@
 # Changelog
 
+### [2.1.4](https://github.com/googleapis/java-game-servers/compare/v2.1.3...v2.1.4) (2021-11-23)
+
+
+### Bug Fixes
+
+* **java:** java 17 dependency arguments ([#1266](https://github.com/googleapis/java-game-servers/issues/1266)) ([#560](https://github.com/googleapis/java-game-servers/issues/560)) ([2ee33c5](https://github.com/googleapis/java-game-servers/commit/2ee33c5b338c2623e36350c6cca97138371c9841))
+
+
+### Documentation
+
+* fix docstring formatting ([#566](https://github.com/googleapis/java-game-servers/issues/566)) ([bdc90dc](https://github.com/googleapis/java-game-servers/commit/bdc90dcd9371f9e6a2cf6a0742f3dd7bf0d2b423))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.5.0 ([#572](https://github.com/googleapis/java-game-servers/issues/572)) ([445ea87](https://github.com/googleapis/java-game-servers/commit/445ea875fbce09394c3c24582d8615210ba67f43))
+* update dependency com.google.code.gson:gson to v2.8.9 ([#563](https://github.com/googleapis/java-game-servers/issues/563)) ([507ae0d](https://github.com/googleapis/java-game-servers/commit/507ae0d42664fbeb734461f1d4154d1b3736ff10))
+
 ### [2.1.3](https://www.github.com/googleapis/java-game-servers/compare/v2.1.2...v2.1.3) (2021-10-19)
 
 
