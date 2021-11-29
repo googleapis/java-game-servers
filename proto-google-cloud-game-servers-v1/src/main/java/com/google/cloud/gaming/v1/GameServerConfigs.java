@@ -73,8 +73,7 @@ public final class GameServerConfigs {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "0google/cloud/gaming/v1/game_server_con"
-          + "figs.proto\022\026google.cloud.gaming.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032#google/cloud/gaming/v1/common.proto\032\037google/protobuf/timestamp.proto\032\034google/api/annotations.proto\"\301\001\n"
+          + "0google/cloud/gaming/v1/game_server_configs.proto\022\026google.cloud.gaming.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032#google/cloud/gaming/v1/common.proto\032\037google/protobuf/timestamp.proto\032\034google/api/annotations.proto\"\301\001\n"
           + "\034ListGameServerConfigsRequest\022D\n"
           + "\006parent\030\001 \001("
           + "\tB4\340A\002\372A.\022,gameservices.googleapis.com/GameServerConfig\022\026\n"
