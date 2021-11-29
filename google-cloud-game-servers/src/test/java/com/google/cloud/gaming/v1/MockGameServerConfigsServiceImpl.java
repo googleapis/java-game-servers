@@ -74,7 +74,8 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGameServerConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListGameServerConfigs, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGameServerConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGameServerConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateGameServerConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockGameServerConfigsServiceImpl extends GameServerConfigsServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGameServerConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteGameServerConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

@@ -74,7 +74,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGameServerDeployments, expected %s or %s",
+                  "Unrecognized response type %s for method ListGameServerDeployments, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGameServerDeploymentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -96,7 +97,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGameServerDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method GetGameServerDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GameServerDeployment.class.getName(),
                   Exception.class.getName())));
@@ -117,7 +119,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGameServerDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method CreateGameServerDeployment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +141,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGameServerDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteGameServerDeployment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +163,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGameServerDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGameServerDeployment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -181,7 +186,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGameServerDeploymentRollout, expected %s or %s",
+                  "Unrecognized response type %s for method GetGameServerDeploymentRollout,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GameServerDeploymentRollout.class.getName(),
                   Exception.class.getName())));
@@ -203,7 +209,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGameServerDeploymentRollout, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGameServerDeploymentRollout,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -225,7 +232,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PreviewGameServerDeploymentRollout, expected %s or %s",
+                  "Unrecognized response type %s for method PreviewGameServerDeploymentRollout,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PreviewGameServerDeploymentRolloutResponse.class.getName(),
                   Exception.class.getName())));
@@ -247,7 +255,8 @@ public class MockGameServerDeploymentsServiceImpl extends GameServerDeploymentsS
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchDeploymentState, expected %s or %s",
+                  "Unrecognized response type %s for method FetchDeploymentState, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchDeploymentStateResponse.class.getName(),
                   Exception.class.getName())));

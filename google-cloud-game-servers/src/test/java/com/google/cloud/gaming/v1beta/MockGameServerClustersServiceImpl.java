@@ -74,7 +74,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGameServerClusters, expected %s or %s",
+                  "Unrecognized response type %s for method ListGameServerClusters, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGameServerClustersResponse.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method GetGameServerCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GameServerCluster.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +118,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method CreateGameServerCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +141,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PreviewCreateGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method PreviewCreateGameServerCluster,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PreviewCreateGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +163,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteGameServerCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -181,7 +186,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PreviewDeleteGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method PreviewDeleteGameServerCluster,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PreviewDeleteGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
@@ -202,7 +208,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateGameServerCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -224,7 +231,8 @@ public class MockGameServerClustersServiceImpl extends GameServerClustersService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PreviewUpdateGameServerCluster, expected %s or %s",
+                  "Unrecognized response type %s for method PreviewUpdateGameServerCluster,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PreviewUpdateGameServerClusterResponse.class.getName(),
                   Exception.class.getName())));
