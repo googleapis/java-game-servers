@@ -106,8 +106,7 @@ public final class Common {
     java.lang.String[] descriptorData = {
       "\n"
           + "#google/cloud/gaming/v1/common.proto\022\026g"
-          + "oogle.cloud.gaming.v1\032\037google/api/field_"
-          + "behavior.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\034google/api/annotations.proto\"\332\003\n"
+          + "oogle.cloud.gaming.v1\032\037google/api/field_behavior.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\034google/api/annotations.proto\"\332\003\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
