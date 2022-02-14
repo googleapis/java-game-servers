@@ -40,21 +40,23 @@ public class CreateRealm {
     try (RealmsServiceClient client = RealmsServiceClient.create()) {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
+      if(client.getRealm(realmName) == null ) {
 
-      Realm realm =
-          Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
+        Realm realm =
+            Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
 
-      CreateRealmRequest request =
-          CreateRealmRequest.newBuilder()
-              .setParent(parent)
-              .setRealmId(realmId)
-              .setRealm(realm)
-              .build();
+        CreateRealmRequest request =
+            CreateRealmRequest.newBuilder()
+                .setParent(parent)
+                .setRealmId(realmId)
+                .setRealm(realm)
+                .build();
 
-      OperationFuture<Realm, OperationMetadata> call = client.createRealmAsync(request);
-      Realm result = call.get(1, TimeUnit.MINUTES);
+        OperationFuture<Realm, OperationMetadata> call = client.createRealmAsync(request);
+        Realm result = call.get(1, TimeUnit.MINUTES);
 
-      System.out.println("Realm created: " + result.getName());
+        System.out.println("Realm created: " + result.getName());
+      }
     }
   }
 }
