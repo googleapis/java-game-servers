@@ -26,7 +26,11 @@ import com.google.cloud.gaming.v1.GameServerDeploymentsServiceClient.ListGameSer
 import com.google.cloud.gaming.v1.Realm;
 import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -35,6 +39,8 @@ class GameServicesTestUtil {
   private static GameServerDeploymentsServiceClient deploymentsClient;
   private static RealmsServiceClient realmsClient;
   static String UID = UUID.randomUUID().toString().substring(0, 8);
+
+  private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
   private static GameServerClustersServiceClient getClustersClient() throws IOException {
     if (clustersClient == null) {
@@ -63,9 +69,14 @@ class GameServicesTestUtil {
           getClustersClient().listGameServerClusters(parent);
 
       for (GameServerCluster cluster : response.iterateAll()) {
-        System.out.println("Deleting game cluster " + cluster.getName());
-        OperationFuture poll = getClustersClient().deleteGameServerClusterAsync(cluster.getName());
-        poll.get(1, TimeUnit.MINUTES);
+        if (!cluster.hasCreateTime()) {
+          continue;
+        }
+        if (isCreatedBeforeThresholdTime(cluster.getCreateTime())) {
+          System.out.println("Deleting game cluster " + cluster.getName());
+          OperationFuture poll = getClustersClient().deleteGameServerClusterAsync(cluster.getName());
+          poll.get(1, TimeUnit.MINUTES);
+        }
       }
     } catch (Exception e) {
       e.printStackTrace(System.err);
@@ -78,10 +89,17 @@ class GameServicesTestUtil {
           getDeploymentsClient().listGameServerDeployments(parent);
 
       for (GameServerDeployment deployment : response.iterateAll()) {
-        System.out.println("Deleting game server deployment " + deployment.getName());
-        OperationFuture poll =
-            getDeploymentsClient().deleteGameServerDeploymentAsync(deployment.getName());
-        poll.get(1, TimeUnit.MINUTES);
+        if (!deployment.hasCreateTime()) {
+          continue;
+        }
+        if (isCreatedBeforeThresholdTime(deployment.getCreateTime())) {
+          System.out.println("Deleting game server deployment " + deployment.getName());
+          OperationFuture poll =
+              getDeploymentsClient().deleteGameServerDeploymentAsync(deployment.getName());
+          poll.get(1, TimeUnit.MINUTES);
+        }
+
+
       }
     } catch (Exception e) {
       e.printStackTrace(System.err);
@@ -93,12 +111,25 @@ class GameServicesTestUtil {
       ListRealmsPagedResponse response = getRealmsClient().listRealms(parent);
 
       for (Realm realm : response.iterateAll()) {
-        System.out.println("Deleting realm " + realm.getName());
-        OperationFuture poll = getRealmsClient().deleteRealmAsync(realm.getName());
-        poll.get(1, TimeUnit.MINUTES);
+        if (!realm.hasCreateTime()) {
+          continue;
+        }
+        if (isCreatedBeforeThresholdTime(realm.getCreateTime())) {
+          System.out.println("Deleting realm " + realm.getName());
+          OperationFuture poll = getRealmsClient().deleteRealmAsync(realm.getName());
+          poll.get(1, TimeUnit.MINUTES);
+        }
+
       }
     } catch (Exception e) {
       e.printStackTrace(System.err);
     }
+  }
+
+  public static boolean isCreatedBeforeThresholdTime(Timestamp timestamp) {
+    String timestampString = timestamp.toString();
+
+    return OffsetDateTime.parse(timestampString).toInstant()
+        .isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_HOURS, ChronoUnit.HOURS));
   }
 }
