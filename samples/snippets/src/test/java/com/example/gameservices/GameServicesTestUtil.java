@@ -74,7 +74,8 @@ class GameServicesTestUtil {
         }
         if (isCreatedBeforeThresholdTime(cluster.getCreateTime())) {
           System.out.println("Deleting game cluster " + cluster.getName());
-          OperationFuture poll = getClustersClient().deleteGameServerClusterAsync(cluster.getName());
+          OperationFuture poll =
+              getClustersClient().deleteGameServerClusterAsync(cluster.getName());
           poll.get(1, TimeUnit.MINUTES);
         }
       }
@@ -98,8 +99,6 @@ class GameServicesTestUtil {
               getDeploymentsClient().deleteGameServerDeploymentAsync(deployment.getName());
           poll.get(1, TimeUnit.MINUTES);
         }
-
-
       }
     } catch (Exception e) {
       e.printStackTrace(System.err);
@@ -119,7 +118,6 @@ class GameServicesTestUtil {
           OperationFuture poll = getRealmsClient().deleteRealmAsync(realm.getName());
           poll.get(1, TimeUnit.MINUTES);
         }
-
       }
     } catch (Exception e) {
       e.printStackTrace(System.err);
@@ -129,7 +127,8 @@ class GameServicesTestUtil {
   public static boolean isCreatedBeforeThresholdTime(Timestamp timestamp) {
     String timestampString = timestamp.toString();
 
-    return OffsetDateTime.parse(timestampString).toInstant()
+    return OffsetDateTime.parse(timestampString)
+        .toInstant()
         .isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_HOURS, ChronoUnit.HOURS));
   }
 }
