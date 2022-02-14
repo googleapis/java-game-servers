@@ -124,7 +124,8 @@ class GameServicesTestUtil {
   }
 
   public static boolean isCreatedBeforeThresholdTime(Timestamp timestamp) {
-    Instant instant =  Instant.ofEpochSecond( timestamp.getSeconds() , timestamp.getNanos() );
-    return instant.isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_MINUTES, ChronoUnit.MINUTES));
+    Instant instant = Instant.ofEpochSecond(timestamp.getSeconds(), timestamp.getNanos());
+    return instant.isBefore(
+        Instant.now().minus(DELETION_THRESHOLD_TIME_MINUTES, ChronoUnit.MINUTES));
   }
 }
