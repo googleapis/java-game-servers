@@ -24,6 +24,7 @@ import com.example.gameservices.clusters.GetCluster;
 import com.example.gameservices.clusters.ListClusters;
 import com.example.gameservices.clusters.UpdateCluster;
 import com.example.gameservices.realms.CreateRealm;
+import com.google.protobuf.Timestamp;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -128,4 +129,5 @@ public class ClusterTests {
 
     assertTrue(bout.toString().contains("Game Server Cluster updated: " + clusterName));
   }
+
 }

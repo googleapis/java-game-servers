@@ -29,7 +29,6 @@ import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.time.Instant;
-import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -125,10 +124,7 @@ class GameServicesTestUtil {
   }
 
   public static boolean isCreatedBeforeThresholdTime(Timestamp timestamp) {
-    String timestampString = timestamp.toString();
-
-    return OffsetDateTime.parse(timestampString)
-        .toInstant()
-        .isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_HOURS, ChronoUnit.HOURS));
+    Instant instant =  Instant.ofEpochSecond( timestamp.getSeconds() , timestamp.getNanos() );
+    return instant.isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_HOURS, ChronoUnit.HOURS));
   }
 }
