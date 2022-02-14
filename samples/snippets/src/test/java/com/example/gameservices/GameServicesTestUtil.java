@@ -39,7 +39,7 @@ class GameServicesTestUtil {
   private static RealmsServiceClient realmsClient;
   static String UID = UUID.randomUUID().toString().substring(0, 8);
 
-  private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
+  private static final int DELETION_THRESHOLD_TIME_MINUTES = 10;
 
   private static GameServerClustersServiceClient getClustersClient() throws IOException {
     if (clustersClient == null) {
@@ -125,6 +125,6 @@ class GameServicesTestUtil {
 
   public static boolean isCreatedBeforeThresholdTime(Timestamp timestamp) {
     Instant instant =  Instant.ofEpochSecond( timestamp.getSeconds() , timestamp.getNanos() );
-    return instant.isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_HOURS, ChronoUnit.HOURS));
+    return instant.isBefore(Instant.now().minus(DELETION_THRESHOLD_TIME_MINUTES, ChronoUnit.MINUTES));
   }
 }
