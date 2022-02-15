@@ -40,7 +40,7 @@ public class CreateRealm {
     try (RealmsServiceClient client = RealmsServiceClient.create()) {
       String parent = String.format("projects/%s/locations/%s", projectId, regionId);
       String realmName = String.format("%s/realms/%s", parent, realmId);
-      if(client.getRealm(realmName) == null ) {
+      if (client.getRealm(realmName) == null) {
 
         Realm realm =
             Realm.newBuilder().setName(realmName).setTimeZone("America/Los_Angeles").build();
