@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.5](https://github.com/googleapis/java-game-servers/compare/v2.3.4...v2.3.5) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([6412289](https://github.com/googleapis/java-game-servers/commit/64122898399fbb8eba5e8c907ceadfd319e536e6))
+
 ## [2.3.4](https://github.com/googleapis/java-game-servers/compare/v2.3.3...v2.3.4) (2022-10-03)
 
 
